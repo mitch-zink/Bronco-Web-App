@@ -26,6 +26,11 @@
   <li><a href="createnewproject.php">Create New Project</a></li>
   <li><a href="openproject.php">Open Project</a></li>
 </ul>
+<?php 
+    echo "<h1>Home</h1>";
+    echo "<hr>";
+    echo "<h2>1966 – 1976 Early Ford Bronco Expense & Project Tracker for DIY Vehicle Restoration</h2>";
+?>
 
 <h3> This is the basic home page for non admin users. </h3>
 </body>
