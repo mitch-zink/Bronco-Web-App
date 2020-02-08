@@ -92,11 +92,13 @@ var_dump($contacts);
                     <td><form action="viewContact.php" method="post">
                     <input type="hidden" name="transid" value="<?php echo $trans['transid']; ?>">
                     <input type="submit" name="select" value="View Contact">
-                    </form>
                     </tr>
-               
-            </table>
-	      </div>
+                    </form>
+                    </table> 
+               <form action="addTransaction.php" method="post">     
+               <input type="submit" name="addtrans" value="Add New Transaction">  
+               </form>     
+         </div>
       <script src="js/scripts.js"></script>
    </body>
 </html>
