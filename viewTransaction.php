@@ -95,7 +95,7 @@ var_dump($contacts);
                     </tr>
                     </form>
                     </table> 
-               <form action="addTransaction.php" method="post">     
+               <form action="addTransactionForm.php" method="post">     
                <input type="submit" name="addtrans" value="Add New Transaction">  
                </form>     
          </div>
