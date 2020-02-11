@@ -1,83 +1,140 @@
 <?php
-
-//Connects to the MySQL database using the PDO extension
-$pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
-
-//Selects data from DB
-$sql = "SELECT projectID, projectname FROM projects";
-
-//Prepares the select statement
-$stmt = $pdo->prepare($sql);
-
-//Executes the statement
-$stmt->execute();
-
-//Retrieves the rows with fetchall
-$projectsfromDB = $stmt->fetchAll();
+// part 2
+$dsn = 'mysql:host=localhost;dbname=bronco';
+$username = 'root';
+$password = '';
+try {
+    $db = new PDO($dsn, $username, $password);
+    //  echo '<p> You are connected to the database ! </p>';
+    
+}
+catch(PDOException $e) {
+    $error_message = $e->getMessage();
+    //  echo "<p> Connection error! : $error_message</p>";
+    
+}
+// Gets all project names
+$query = $db->query("select * from projects order by projectname asc");
+//
+//  Cat ID
+if (!isset($cat_id_1)) {
+    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
+}
+//
+// Gets projects from the selected category
+$queryprojects = 'SELECT * FROM projects
+   							WHERE projectid = :cat_id_1
+   							ORDER BY projectid';
+$statement2 = $db->prepare($queryprojects);
+$statement2->bindValue(':cat_id_1', $cat_id_1);
+$statement2->execute();
+$projects = $statement2->fetchAll();
+$statement2->closeCursor();
+//
+// Grabs the data from the submit buttons for viewOrders and viewDetails... they both have the same name
+$action = filter_input(INPUT_GET, 'select');
+//
 
 ?>
-
-
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="css.css">
-</head>
-<body>
-
-<ul>
-  <li style="float:left"><a href="#">Bronco</a>
-  <li><a href="home.php">Home</a></li>
-  <li><a href="homepage.php">Admin Home Page</a></li>
-  <li><a href="aboutus.php">About Us</a></li>
-  <li><a href="purpose.php">Purpose</a></li>
-  <li><a href="faq.php">FAQ</a></li>
-  <li><a href="createUA.php">Create project Account</a></li>
-  <li><a href="login.php">Login</a></li>
-  <li><a href="logout.php">Logout</a></li>
-  <li><a href="parts.php">Parts</a></li>
-  <li><a href="phonebook.php">Phonebook</a></li>
-  <li><a href="projects.php">Projects</a></li>
-  <li><a href="files.php">Files</a></li>
-  <li><a href="WorkCompleted.php">Work Completed</a></li>
-  <li><a href="createnewproject.php">Create New Project</a></li>
-  <li><a href="openproject.php">Open Project</a></li>
-</ul>
-
-<div class="form-style-6">
+   <head>
+      <link rel="stylesheet" type="text/css" href="css.css">
+   </head>
+   <body>
+      <ul>
+         <li style="float:left"><a href="#">Bronco</a>
+         <li><a href="home.php">Home</a></li>
+         <li><a href="homepage.php">Admin Home Page</a></li>
+         <li><a href="aboutus.php">About Us</a></li>
+         <li><a href="purpose.php">Purpose</a></li>
+         <li><a href="faq.php">FAQ</a></li>
+         <li><a href="createUA.php">Create project Account</a></li>
+         <li><a href="login.php">Login</a></li>
+         <li><a href="logout.php">Logout</a></li>
+         <li><a href="parts.php">Parts</a></li>
+         <li><a href="phonebook.php">Phonebook</a></li>
+         <li><a href="projects.php">Projects</a></li>
+         <li><a href="files.php">Files</a></li>
+         <li><a href="WorkCompleted.php">Work Completed</a></li>
+         <li><a href="createnewproject.php">Create New Project</a></li>
+         <li><a href="openproject.php">Open Project</a></li>
+      </ul>
+      <!-- DDL -->
+      <div class="form-style-6">
          <h1>Open Project</h1>
-         <select>
-    <?php foreach($projectsfromDB as $project): ?>
-        <option value="<?= $project['projectID']; ?>"><?= $project['projectname']; ?></option>
-    <?php endforeach; ?>
-</select>
-            <input type="submit" value="Submit" />
+         <form action="#" name="DDL" method="get">
+            <select name="cat_id_1">
+               <option></option>
+               <?php
+while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    echo '<option value="' . $row['projectid'] . '">' . $row['projectname'] . '</option>';
+}
+?>
+            </select>
+            <input type="submit" name="action" value="ListSelect">
+         </form>
          </form>
       </div>
       <script src="js/scripts.js"></script>
-
-
       <div class="form-style-6">
-         <h1>Project Name Goes Here and appears only after being selected</h1>
+         <?php
+foreach ($projects as $project):
+?>
+         <h1><?php
+    echo $project["projectname"];
+?></h1>
+         <?php
+endforeach;
+?>
          <form>
-            <input type="text" name="projectid" placeholder="projectid" />
-            <input type="text" name="projectname" placeholder="projectname" />
-            <input type="text" name="Make" placeholder="Make" />
-            <input type="text" name="Model" placeholder="Model" />
-            <input type="text" name="trim_pkg" placeholder="trim_pkg" />
-            <input type="text" name="projectdesc" placeholder="projectdesc" />
-            <input type="date" name="purchdate" placeholder="purchdate" />
-            <input type="text" name="purchprice" placeholder="purchprice" />
-            <input type="text" name="sellprice" placeholder="sellprice" />
-            <input type="date" name="selldate" placeholder="selldate" />
-            <input type="text" name="projectcomments" placeholder="projectcomments" />
+            <?php
+foreach ($projects as $project):
+?>
+            <input type="text" readonly name="projectid" placeholder="projectid" value="Project ID: <?php
+    echo $project["projectid"];
+?>" />
+            <input type="text" readonly  name="projectname" placeholder="projectname" value="Project Name: <?php
+    echo $project["projectname"];
+?>" />
+            <input type="text"  readonly name="Make" placeholder="Make" value="Make: <?php
+    echo $project["make"];
+?>" />
+            <input type="text"  readonly name="Model" placeholder="Model" value="Model: <?php
+    echo $project["model"];
+?>" />
+            <input type="text"  readonly name="trim_pkg" placeholder="trim_pkg" value="Trim Package: <?php
+    echo $project["trim_pkg"];
+?>" />
+            <input type="text"  readonly name="projectdesc" placeholder="projectdesc" value="Project Description: <?php
+    echo $project["projectdesc"];
+?>" />
+            <input type="text"  readonly name="purchdate" placeholder="purchdate" value="Purchase Date: <?php
+    echo $project["purchdate"];
+?>" />
+            <input type="text" readonly  name="purchprice" placeholder="purchprice" value="Purchase Price: <?php
+    echo $project["purchprice"];
+?>" />
+            <input type="text"  readonly name="sellprice" placeholder="sellprice" value="Sell Price: <?php
+    echo $project["sellprice"];
+?>" />
+            <input type="text"  readonly name="selldate" placeholder="selldate" value="Sell Date: <?php
+    echo $project["selldate"];
+?>" />
+            <input type="text"  readonly name="projectcomments" placeholder="projectcomments" value="Project Comments: <?php
+    echo $project["projectcomments"];
+?>" />
             <input type="submit" value="Submit" />
+            <?php
+endforeach;
+?>
          </form>
       </div>
-
-</body>
-
+      <td> <?php
+echo $project["projectname"];
+?> </td>
+      <td> <?php
+echo $project["projectid"];
+?></td>
+   </body>
 </html>
-
-
-
