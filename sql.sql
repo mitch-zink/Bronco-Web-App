@@ -5,8 +5,8 @@ USE bronco;
 CREATE TABLE phonebook 
 ( 
     phoneid      INT             NOT NULL    auto_increment, 
-    firstname    VARCHAR(60)     NOT NULL, 
-    lastname     VARCHAR(60)     NOT NULL, 
+    firstname    VARCHAR(60),
+    lastname     VARCHAR(60),
     business     VARCHAR(60), 
     addr1        VARCHAR(60)     NOT NULL, 
     addr2        VARCHAR(60)                 DEFAULT NULL, 
@@ -117,7 +117,7 @@ INSERT INTO parts (partid, itemname, itemdesc, quantity, comments)
 VALUES (1,'muffler','flowmaster', 2 ,'It''s got flooooooow');
 
 INSERT INTO transaction (transid, phoneid, partid, date, price, transtype, quantity)
-VALUES (1, 1, 1,'02-03-2020','150.00', 'buy', 2);
+VALUES (1, 1, 1,'2020-03-02','150.00', 'buy', 2);
 
 INSERT INTO projects (projectid, projectname, make, model, trim_pkg, purchprice, purchdate, sellprice, selldate, projectcomments) 
 VALUES (1,'77 Bronco offroad','Ford','Bronco','SLE','67200.00','2019-03-14',NULL,NULL, 'Overall in good condition. Needs new bumper and seats.');
@@ -129,7 +129,7 @@ INSERT INTO workcompleted (workid, projectid, workname, workdesc, workcomments, 
 VALUES (1, 1,'Oil change','5qt 5W-20 ','Completed','2019-03-14'); 
 
 INSERT INTO files (fileid, projectid, filename, filetype, dateadded)
-VALUES (1, 1, 'bronco.jpg', 'Picture', '02-03-2020');
+VALUES (1, 1, 'bronco.jpg', 'Picture', '2020-03-02');
 
 INSERT INTO users (userid, username, password)
 VALUES (1, 'admin', 'admin');
