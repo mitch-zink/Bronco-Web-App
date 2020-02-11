@@ -1,5 +1,5 @@
 <?php
-// part 2
+// DB connection
 $dsn = 'mysql:host=localhost;dbname=bronco';
 $username = 'root';
 $password = '';
@@ -13,15 +13,16 @@ catch(PDOException $e) {
     //  echo "<p> Connection error! : $error_message</p>";
     
 }
-// Gets all project names
+// Query for DDL
 $query = $db->query("select * from projects order by projectname asc");
 //
-//  Cat ID
+
+// Checks for a null value
 if (!isset($cat_id_1)) {
     $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
 }
-//
-// Gets projects from the selected category
+
+// Runs a query based on the selected projectid from the DDL
 $queryprojects = 'SELECT * FROM projects
    							WHERE projectid = :cat_id_1
    							ORDER BY projectid';
@@ -30,10 +31,7 @@ $statement2->bindValue(':cat_id_1', $cat_id_1);
 $statement2->execute();
 $projects = $statement2->fetchAll();
 $statement2->closeCursor();
-//
-// Grabs the data from the submit buttons for viewOrders and viewDetails... they both have the same name
-$action = filter_input(INPUT_GET, 'select');
-//
+
 
 ?>
 <!DOCTYPE html>
@@ -62,7 +60,7 @@ $action = filter_input(INPUT_GET, 'select');
       </ul>
       <!-- DDL -->
       <div class="form-style-6">
-         <h1>Open Project</h1>
+         <h1>Select a project to continue</h1>
          <form action="#" name="DDL" method="get">
             <select name="cat_id_1">
                <option></option>
@@ -72,7 +70,7 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 }
 ?>
             </select>
-            <input type="submit" name="action" value="ListSelect">
+            <input type="submit" name="action" value="Submit">
          </form>
          </form>
       </div>
@@ -124,17 +122,10 @@ foreach ($projects as $project):
             <input type="text"  readonly name="projectcomments" placeholder="projectcomments" value="Project Comments: <?php
     echo $project["projectcomments"];
 ?>" />
-            <input type="submit" value="Submit" />
             <?php
 endforeach;
 ?>
          </form>
       </div>
-      <td> <?php
-echo $project["projectname"];
-?> </td>
-      <td> <?php
-echo $project["projectid"];
-?></td>
    </body>
 </html>
