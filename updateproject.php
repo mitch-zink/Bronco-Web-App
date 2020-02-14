@@ -8,38 +8,20 @@ $dbname = "bronco";
 
 // Checks for null values
 if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
+
 }
 
-// Checks for a null value
-if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
-}
-
-// Checks for a null value
-if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
-}
-
-// Checks for a null value
-if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
-}
-
-// Checks for a null value
-if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
-}
-
-// Checks for a null value
-if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
-}
-
-// Checks for a null value
-if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
-}
+$cat_id_1 = filter_input(INPUT_GET, 'projectid', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'projectname', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'Make', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'Model', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'trim_pkg', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'projectdesc', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'purchdate', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'purchprice', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'sellprice', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'selldate', FILTER_VALIDATE_INT);
+$cat_id_1 = filter_input(INPUT_GET, 'projectcomments', FILTER_VALIDATE_INT);
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -151,37 +133,37 @@ endforeach;
             <?php
 foreach ($projects as $project):
 ?>
-            <input type="text"  name="projectid" placeholder="projectid" value="Project ID: <?php
+            <input type="text"  name="projectid" placeholder="projectid" value="<?php
     echo $project["projectid"];
 ?>" />
-            <input type="text"   name="projectname" placeholder="projectname" value="Project Name: <?php
+            <input type="text"   name="projectname" placeholder="projectname" value="<?php
     echo $project["projectname"];
 ?>" />
-            <input type="text"   name="Make" placeholder="Make" value="Make: <?php
+            <input type="text"   name="Make" placeholder="Make" value="<?php
     echo $project["make"];
 ?>" />
-            <input type="text"   name="Model" placeholder="Model" value="Model: <?php
+            <input type="text"   name="Model" placeholder="Model" value="<?php
     echo $project["model"];
 ?>" />
-            <input type="text"   name="trim_pkg" placeholder="trim_pkg" value="Trim Package: <?php
+            <input type="text"   name="trim_pkg" placeholder="trim_pkg" value="<?php
     echo $project["trim_pkg"];
 ?>" />
-            <input type="text"   name="projectdesc" placeholder="projectdesc" value="Project Description: <?php
+            <input type="text"   name="projectdesc" placeholder="projectdesc" value="<?php
     echo $project["projectdesc"];
 ?>" />
-            <input type="text"   name="purchdate" placeholder="purchdate" value="Purchase Date: <?php
+            <input type="text"   name="purchdate" placeholder="purchdate" value="<?php
     echo $project["purchdate"];
 ?>" />
-            <input type="text"   name="purchprice" placeholder="purchprice" value="Purchase Price: <?php
+            <input type="text"   name="purchprice" placeholder="purchprice" value="<?php
     echo $project["purchprice"];
 ?>" />
-            <input type="text"   name="sellprice" placeholder="sellprice" value="Sell Price: <?php
+            <input type="text"   name="sellprice" placeholder="sellprice" value="<?php
     echo $project["sellprice"];
 ?>" />
-            <input type="text"   name="selldate" placeholder="selldate" value="Sell Date: <?php
+            <input type="text"   name="selldate" placeholder="selldate" value="<?php
     echo $project["selldate"];
 ?>" />
-            <input type="text"   name="projectcomments" placeholder="projectcomments" value="Project Comments: <?php
+            <input type="text"   name="projectcomments" placeholder="projectcomments" value="<?php
     echo $project["projectcomments"];
 ?>" />
             <?php

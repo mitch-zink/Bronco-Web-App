@@ -32,7 +32,6 @@ $statement2->execute();
 $projects = $statement2->fetchAll();
 $statement2->closeCursor();
 
-
 ?>
 <!DOCTYPE html>
 <html>
