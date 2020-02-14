@@ -45,24 +45,22 @@ var_dump($contacts);
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
       <ul>
          <li style="float:left"><a href="#">Bronco</a>
-         <li><a href="home.php">Home</a></li>
-         <li><a href="homepage.php">Admin Home Page</a></li>
-         <li><a href="aboutus.php">About Us</a></li>
-         <li><a href="purpose.php">Purpose</a></li>
-         <li><a href="faq.php">FAQ</a></li>
-         <li><a href="createUA.php">Create User Account</a></li>
-         <li><a href="login.php">Login</a></li>
-         <li><a href="logout.php">Logout</a></li>
-         <li><a href="parts.php">Parts</a></li>
-         <li><a href="phonebook.php">Phonebook</a></li>
-         <li><a href="projects.php">Projects</a></li>
-         <li><a href="files.php">Files</a></li>
-         <li><a href="WorkCompleted.php">Work Completed</a></li>
+         <li><a href="../home/home.php">Home</a></li>
+         <li><a href="..home/homepage.php">Admin Home Page</a></li>
+         <li><a href="../about/aboutus.php">About Us</a></li>
+         <li><a href="../users/login.php">Login</a></li>
+         <li><a class="active" href="#">Parts</a></li>
+         <li><a href="../phonebook/phonebook.php">Phonebook</a></li>
+         <li><a href="../projects/projects.php">Projects</a></li>
+      </ul>
+      <ul>
+         <li><a class="active" href="parts.php">View Parts</a></li>
+         <li><a href="addPartsForm.php">Add Parts</a></li>
       </ul>
       <div class="form-style-6">
           <h1>View Transactions</h1>
@@ -89,7 +87,7 @@ var_dump($contacts);
                     <td><?php echo $tran['date']; ?></td>
                     <td><?php echo $tran['quantity']; ?></td>		
                      <?php } } }?>
-                    <td><form action="viewContact.php" method="post">
+                    <td><form action="../phonebook/viewContact.php" method="post">
                     <input type="hidden" name="transid" value="<?php echo $trans['transid']; ?>">
                     <input type="submit" name="select" value="View Contact">
                     </tr>
