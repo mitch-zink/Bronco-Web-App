@@ -4,23 +4,22 @@
 $pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
 
 if(!isset($partid)) {
-    $partid = filter_input(INPUT_POST, 'partid', FILTER_VALIDATE_INT);
+    $partid = filter_input(INPUT_POST, "partid", FILTER_VALIDATE_INT);
 }
 
 //Select parts 
-$sql = "SELECT itemname FROM parts ORDER BY itemname";
+$sql = "SELECT * FROM parts ORDER BY partid";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $parts = $stmt->fetchAll();
 $stmt->closeCursor();
 
 //Select phonebook info
-$sql2 = "SELECT firstname, lastname, business FROM phonebook ORDER BY phoneid";
+$sql2 = "SELECT * FROM phonebook ORDER BY phoneid";
 $stmt2 = $pdo->prepare($sql2);
 $stmt2->execute();
 $contacts = $stmt2->fetchAll();
 $stmt2->closeCursor();
-
 
 ?>
 
@@ -30,10 +29,7 @@ $stmt2->closeCursor();
       <link rel="stylesheet" type="text/css" href="css.css">
    </head>
    <body>
-   <?php
-include("navbar.php")
-?>
-      <h1>Add Transaction</h1>
+       <h1>Add Transaction</h1>
       <div class="form-style-6">
       
             <h2>Please Select a Part</h2>
@@ -48,9 +44,6 @@ include("navbar.php")
 		    </select>
 		    <input type="submit" name="select" value="Select">
             </form><br>	
-            <form action="addPartsForm.php" method="post">
-            <input type="submit" value="Add A New Part">
-            </form>
     </div>
     <?php if(isset($partid)) { ?>
     <div class="form-style-6">
@@ -68,17 +61,21 @@ include("navbar.php")
             <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>
             <br><br>
             <select name ="type" placeholder="Select Transaction Type">
-            <option value="buy">Buyer</option>
-            <option value="sell">Seller</option>
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
             </select>
             <input type="text" name="price" placeholder="Price" />
             <input type="text" name="date" placeholder="Date mm/dd/yyyy" />
             <input type="text" name="quantity" placeholder="Quantity" />
-            <input type="hidden" name="part_id" value="<?php echo $partid ?>">
+            <input type="hidden" name="part_id" value="<?php echo $partid; ?>">
             <input type="submit" value="Enter Transaction" />
          </form>
                 <?php } ?>
       </div>
+      
+<?php
+include("navbar.php")
+?>
       <script src="js/scripts.js"></script>
    </body>
 </html>
