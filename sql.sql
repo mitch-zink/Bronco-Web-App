@@ -30,7 +30,7 @@ CREATE TABLE parts
     PRIMARY KEY (partid) 
 );
 
-CREATE TABLE transaction
+CREATE TABLE transactions
 (
     transid      INT             NOT NULL    auto_increment,
     phoneid      INT             NOT NULL,
@@ -117,7 +117,7 @@ VALUES (1,'Rock','Strongo', NULL,'105 Ha Dr','Pittsburgh','PA','16066','me@woo.c
 INSERT INTO parts (partid, itemname, partfamily, itemdesc, quantity, comments) 
 VALUES (1,'muffler', 'exhaust', 'flowmaster', 2 ,'It''s got flooooooow');
 
-INSERT INTO transaction (transid, phoneid, partid, date, price, transtype, quantity)
+INSERT INTO transactions (transid, phoneid, partid, date, price, transtype, quantity)
 VALUES (1, 1, 1,'2020-03-02','150.00', 'buy', 2);
 
 INSERT INTO projects (projectid, projectname, make, model, trim_pkg, purchprice, purchdate, sellprice, selldate, projectcomments) 
