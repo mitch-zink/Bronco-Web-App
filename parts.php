@@ -17,9 +17,6 @@ $stmt->closeCursor();
       <link rel="stylesheet" type="text/css" href="css.css">
    </head>
    <body>
-   <?php
-include("navbar.php")
-?>
       <div class="form-style-6">
           <h1>View Parts</h1>
             <table>
@@ -27,6 +24,7 @@ include("navbar.php")
                 <th>Part Name</th>
                 <th>Quantity</th>
                 <th>Item Description</th>
+                <th>Options</th>
                 </tr>
 		
                 <?php foreach($parts as $part) {?> 
@@ -39,10 +37,19 @@ include("navbar.php")
                     <input type="hidden" name="partid" value="<?php echo $part['partid']; ?>">
                     <input type="submit" name="select" value="View Transactions">
                     </form>
+                    <form action="UpdatePartsForm.php" method="post">
+                    <input type="hidden" name="partid" value="<?php echo $part['partid']; ?>">
+                    <input type="submit" name="select" value="Edit Part Information">
+                    </form>
                     </tr>
                 <?php }  ?>
             </table>
+            <input type="button" onclick="location.href='addPartsForm.php';" value="Add New Part"/>
 	      </div>
+         
+<?php
+include("navbar.php")
+?>
       <script src="js/scripts.js"></script>
    </body>
 </html>
