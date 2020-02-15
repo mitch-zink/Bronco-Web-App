@@ -1,5 +1,5 @@
 <?php
-// Code for DDL and populating the form with data from the DB
+// Code for DDL , populating the form with data from the DB
 // DB connection
 $dsn = 'mysql:host=localhost;dbname=bronco';
 $username = 'root';
@@ -36,10 +36,23 @@ $projects = $statement2->fetchAll();
 $statement2->closeCursor();
 // ------------------------------
 
+
 // Code for update statement 
 // Get data from form
+
+
 $projectid = $_POST['projectid'];
 $projectname = $_POST['projectname'];
+$make = $_POST['make'];
+$model = $_POST['model'];
+$trim_pkg = $_POST['trim_pkg'];
+$projectdesc = $_POST['projectdesc'];
+$purchdate = $_POST['purchdate'];
+$purchprice = $_POST['purchprice'];
+$sellprice = $_POST['sellprice'];
+$selldate = $_POST['selldate'];
+$projectcomments = $_POST['projectcomments'];
+
 
 $servername = "localhost";
 $username = "root";
@@ -53,16 +66,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE projects SET projectname= $projectname WHERE projectid=$projectid";
+$sql = "UPDATE projects SET  projectname= '$projectname' , make= '$make' , model= '$model' , trim_pkg= '$trim_pkg' , projectdesc= '$projectdesc' , purchdate= '$purchdate'  , purchprice= '$purchprice' , sellprice= '$sellprice' , selldate= '$selldate' , projectcomments= '$projectcomments' WHERE projectid='$cat_id_1'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
+  //header('Location: openproject.php');
 } else {
     echo "Error updating record: " . $conn->error;
-    echo "Project ID" $projectid;
-    echo "Project Name" $projectname;
-
-
 }
 
 $conn->close();
@@ -100,7 +110,7 @@ include("navbar.php")
          <form action="updateproject.php" method="post">
             <?php foreach ($projects as $project): ?>
             <label for="projectid">Project ID</label>
-            <input type="text"  name="projectid" placeholder="projectid" value="<?php echo $project["projectid"];?>" />
+            <input type="text"  input="readonly" name="projectid" placeholder="projectid" value="<?php echo $project["projectid"];?>" />
            
             <label for="projectid">Project Name</label>
             <input type="text"   name="projectname" placeholder="projectname" value="<?php echo $project["projectname"];?>" />
