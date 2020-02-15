@@ -24,6 +24,7 @@ CREATE TABLE parts
     partid      INT             NOT NULL    auto_increment, 
     itemname    VARCHAR(60)     NOT NULL, 
     itemdesc    VARCHAR(255)    NOT NULL, 
+    partfamily  VARCHAR(255)    NOT NULL,
     quantity    INT             NOT NULL, 
     comments    VARCHAR(255),
     PRIMARY KEY (partid) 
