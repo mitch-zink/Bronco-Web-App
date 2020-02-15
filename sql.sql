@@ -24,12 +24,13 @@ CREATE TABLE parts
     partid      INT             NOT NULL    auto_increment, 
     itemname    VARCHAR(60)     NOT NULL, 
     itemdesc    VARCHAR(255)    NOT NULL, 
+    partfamily  VARCHAR(255)    NOT NULL,
     quantity    INT             NOT NULL, 
     comments    VARCHAR(255),
     PRIMARY KEY (partid) 
 );
 
-CREATE TABLE transaction
+CREATE TABLE transactions
 (
     transid      INT             NOT NULL    auto_increment,
     phoneid      INT             NOT NULL,
@@ -113,10 +114,10 @@ CREATE TABLE users
 INSERT INTO phonebook (phoneID, firstname, lastname, business, addr1, city, state, zip, emailaddress, phonenumber) 
 VALUES (1,'Rock','Strongo', NULL,'105 Ha Dr','Pittsburgh','PA','16066','me@woo.com','8888888888');
 
-INSERT INTO parts (partid, itemname, itemdesc, quantity, comments) 
-VALUES (1,'muffler','flowmaster', 2 ,'It''s got flooooooow');
+INSERT INTO parts (partid, itemname, partfamily, itemdesc, quantity, comments) 
+VALUES (1,'muffler', 'exhaust', 'flowmaster', 2 ,'It''s got flooooooow');
 
-INSERT INTO transaction (transid, phoneid, partid, date, price, transtype, quantity)
+INSERT INTO transactions (transid, phoneid, partid, date, price, transtype, quantity)
 VALUES (1, 1, 1,'2020-03-02','150.00', 'buy', 2);
 
 INSERT INTO projects (projectid, projectname, make, model, trim_pkg, purchprice, purchdate, sellprice, selldate, projectcomments) 
