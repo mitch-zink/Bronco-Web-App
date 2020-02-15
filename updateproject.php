@@ -23,6 +23,16 @@ $cat_id_1 = filter_input(INPUT_GET, 'sellprice', FILTER_VALIDATE_INT);
 $cat_id_1 = filter_input(INPUT_GET, 'selldate', FILTER_VALIDATE_INT);
 $cat_id_1 = filter_input(INPUT_GET, 'projectcomments', FILTER_VALIDATE_INT);
 
+// Runs a query based on the selected projectid from the DDL
+$queryprojects = 'SELECT * FROM projects
+   							WHERE projectid = :cat_id_1
+   							ORDER BY projectid';
+$statement2 = $db->prepare($queryprojects);
+$statement2->bindValue(':cat_id_1', $cat_id_1);
+$statement2->execute();
+$projects = $statement2->fetchAll();
+$statement2->closeCursor();
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -31,6 +41,17 @@ if ($conn->connect_error) {
 }
 
 $sql = "UPDATE projects SET projectname='testing' WHERE projectid=2";
+
+
+$updatestatement = "UPDATE projects SET projectname='testing' WHERE projectid=2";
+$statement2 = $db->prepare($updatestatement);
+$statement2->bindValue(':cat_id_1', $cat_id_1);
+$statement2->execute();
+$projects = $statement2->fetchAll();
+$statement2->closeCursor();
+
+
+
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
@@ -84,24 +105,9 @@ $statement2->closeCursor();
       <link rel="stylesheet" type="text/css" href="css.css">
    </head>
    <body>
-      <ul>
-         <li style="float:left"><a href="#">Bronco</a>
-         <li><a href="home.php">Home</a></li>
-         <li><a href="homepage.php">Admin Home Page</a></li>
-         <li><a href="aboutus.php">About Us</a></li>
-         <li><a href="purpose.php">Purpose</a></li>
-         <li><a href="faq.php">FAQ</a></li>
-         <li><a href="createUA.php">Create project Account</a></li>
-         <li><a href="login.php">Login</a></li>
-         <li><a href="logout.php">Logout</a></li>
-         <li><a href="parts.php">Parts</a></li>
-         <li><a href="phonebook.php">Phonebook</a></li>
-         <li><a href="projects.php">Projects</a></li>
-         <li><a href="files.php">Files</a></li>
-         <li><a href="WorkCompleted.php">Work Completed</a></li>
-         <li><a href="createnewproject.php">Create New Project</a></li>
-         <li><a href="openproject.php">Open Project</a></li>
-      </ul>
+   <?php
+include("navbar.php")
+?>
       <!-- DDL -->
       <div class="form-style-6">
          <h1>Select a project to continue</h1>
