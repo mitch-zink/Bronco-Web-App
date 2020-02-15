@@ -24,6 +24,7 @@
   <li><a href="phonebook.php">phonebook</a></li>
   <li><a href="projects.php">projects</a></li>
   <li><a href="purpose.php">purpose</a></li>
+  <li><a href="reports.php">reports</a></li>
   <li><a href="report2.php">report2</a></li>
   <li><a href="updateproject.php">updateproject</a></li>
   <li><a href="viewtransaction.php">viewtransaction</a></li>
