@@ -62,9 +62,9 @@
 
 <div style="display:none;" id="div1" class="animate-bottom">
 <head>
-  <link rel="stylesheet" type="text/css" href="css.css">
+  <link rel="stylesheet" type="text/css" href="../css.css">
   <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
 <iframe src="https://onedrive.live.com/embed?cid=35A8B4903B56E3A9&resid=35A8B4903B56E3A9%21140489&authkey=AKWMRh8W3Lsesvk" width="165" height="128" frameborder="0" scrolling="no"></iframe>
 </div>

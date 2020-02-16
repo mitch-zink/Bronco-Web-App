@@ -41,6 +41,7 @@ $statement2->closeCursor();
 // Get data from form
 
 
+
 $projectid = $_POST['projectid'];
 $projectname = $_POST['projectname'];
 $make = $_POST['make'];
@@ -52,7 +53,6 @@ $purchprice = $_POST['purchprice'];
 $sellprice = $_POST['sellprice'];
 $selldate = $_POST['selldate'];
 $projectcomments = $_POST['projectcomments'];
-
 
 $servername = "localhost";
 $username = "root";
@@ -66,7 +66,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE projects SET  projectname= '$projectname' , make= '$make' , model= '$model' , trim_pkg= '$trim_pkg' , projectdesc= '$projectdesc' , purchdate= '$purchdate'  , purchprice= '$purchprice' , sellprice= '$sellprice' , selldate= '$selldate' , projectcomments= '$projectcomments' WHERE projectid='$cat_id_1'";
+$sql = "UPDATE projects
+        SET projectname = :projectname,
+            make = :make,
+            model = :model,
+            trim_pkg = :trimpkg,
+            projectdesc = :projectdesc,
+            purchdate = :purchdate,
+            purchprice = :purchprice,
+            selldate = :selldate,
+            sellprice = :sellprice,
+            projectcomments = :projectcomments
+        WHERE projectid = :cat_id_1";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
@@ -82,11 +93,11 @@ $conn->close();
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
    <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
       <!-- DDL -->
       <div class="form-style-6">
@@ -116,10 +127,10 @@ include("navbar.php")
             <input type="text"   name="projectname" placeholder="projectname" value="<?php echo $project["projectname"];?>" />
             
             <label for="projectid">Make</label>
-            <input type="text"   name="Make" placeholder="Make" value="<?php echo $project["make"];?>" />
+            <input type="text"   name="make" placeholder="make" value="<?php echo $project["make"];?>" />
             
             <label for="projectid">Model</label>
-            <input type="text"   name="Model" placeholder="Model" value="<?php echo $project["model"];?>" />
+            <input type="text"   name="model" placeholder="model" value="<?php echo $project["model"];?>" />
             
             <label for="projectid">Trim Package</label>
             <input type="text"   name="trim_pkg" placeholder="trim_pkg" value="<?php echo $project["trim_pkg"];?>" />

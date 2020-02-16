@@ -2,9 +2,9 @@
 <html>
     <head>
     <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
-        <link rel="stylesheet" type="text/css" href="css.css">
+        <link rel="stylesheet" type="text/css" href="../css.css">
     </head>
     <body>
 

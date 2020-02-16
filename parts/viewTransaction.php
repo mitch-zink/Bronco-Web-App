@@ -50,11 +50,11 @@ var_dump($contacts); */
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
    <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
       <div class="form-style-6">
           <h1>View Transactions</h1>

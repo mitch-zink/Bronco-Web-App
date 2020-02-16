@@ -22,12 +22,12 @@ $stmt->closeCursor();
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
          
 <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
       <h1>Modify Parts</h1>
       <div class="form-style-6">

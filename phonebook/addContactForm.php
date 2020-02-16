@@ -3,16 +3,16 @@
 <html>
     <head>
     <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
-        <link rel="stylesheet" type="text/css" href="css.css">
+        <link rel="stylesheet" type="text/css" href="../css.css">
     </head>
     <body>
 
         <h1>Add a New Contact</h1>
         <div class="form-style-6">
             <h1>Enter Contact Information</h1>
-                <form action="addTransaction.php" method="post">
+                <form action="addContact.php" method="post">
                     <input type="text" name="fname" placeholder="First Name"/>
                     <input type="text" name="lname" placeholder="Last Name" />
                     <input type="text" name="biz" placeholder="Business Name" />

@@ -14,9 +14,12 @@ $stmt->closeCursor();
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
+   <?php
+   include("../navbar.php")
+   ?>
       <div class="form-style-6">
           <h1>View Parts</h1>
             <table>
@@ -47,9 +50,6 @@ $stmt->closeCursor();
             <input type="button" onclick="location.href='addPartsForm.php';" value="Add New Part"/>
 	      </div>
          
-<?php
-include("navbar.php")
-?>
       <script src="js/scripts.js"></script>
    </body>
 </html>

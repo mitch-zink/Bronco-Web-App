@@ -3,16 +3,22 @@
 //Connects to the MySQL database using the PDO extension
 $pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
 
-if(!isset($partid)) {
-    $partid = filter_input(INPUT_POST, "partid", FILTER_VALIDATE_INT);
-}
+$transid = filter_input(INPUT_POST, "transid", FILTER_VALIDATE_INT);
+
 
 //Select parts 
-$sql = "SELECT * FROM parts ORDER BY partid";
+$sql = "SELECT * FROM transaction WHERE transid = :transid";
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':transid', $transid);
 $stmt->execute();
-$parts = $stmt->fetchAll();
+$tran = $stmt->fetch();
 $stmt->closeCursor();
+
+$sql1 = "SELECT * FROM parts ORDER BY partid";
+$stmt1 = $pdo->prepare($sql1);
+$stmt1->execute();
+$parts = $stmt1->fetchAll();
+$stmt1->closeCursor();
 
 //Select phonebook info
 $sql2 = "SELECT * FROM phonebook ORDER BY phoneid";
@@ -26,12 +32,16 @@ $stmt2->closeCursor();
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
-       <h1>Add Transaction</h1>
-      <div class="form-style-6">
+   <?php
+include("../navbar.php")
+?>
+        <div class="form-style-6">
       
+        <h1>Modify Transaction</h1>
+            <form action="updateTransaction.php" method="post">
             <h2>Please Select a Part</h2>
             <form action= "addTransactionForm.php" method = "post">
 		    <select name = "partid">
@@ -42,14 +52,6 @@ $stmt2->closeCursor();
 			    </option>
 		    <?php endforeach ?>
 		    </select>
-		    <input type="submit" name="select" value="Select">
-            </form><br>	
-    </div>
-    <?php if(isset($partid)) { ?>
-    <div class="form-style-6">
-        
-            <h1>Enter Transaction Details</h1>
-            <form action="addTransaction.php" method="post">
             <select name = "custid">
             <option value="" disabled selected>Select Transaction Party</option>
                 <?php foreach($contacts as $contact) : ?>
@@ -58,24 +60,18 @@ $stmt2->closeCursor();
 			    </option>
 		    <?php endforeach ?>
 		    </select>
-            <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>
-            <br><br>
             <select name ="type" placeholder="Select Transaction Type">
-            <option value="buyer">Buyer</option>
-            <option value="seller">Seller</option>
+            <option value="Buyer">Buyer</option>
+            <option value="Seller">Seller</option>
             </select>
             <input type="text" name="price" placeholder="Price" />
             <input type="text" name="date" placeholder="Date mm/dd/yyyy" />
             <input type="text" name="quantity" placeholder="Quantity" />
-            <input type="hidden" name="part_id" value="<?php echo $partid; ?>">
-            <input type="submit" value="Enter Transaction" />
+            <input type="submit" value="Update Transaction" />
          </form>
-                <?php } ?>
-      </div>
-      
-<?php
-include("navbar.php")
-?>
+        </div>
+        
+
       <script src="js/scripts.js"></script>
    </body>
 </html>

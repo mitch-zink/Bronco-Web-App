@@ -36,11 +36,11 @@ $statement2->closeCursor();
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
    <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
       <!-- DDL -->
       <div class="form-style-6">

@@ -46,6 +46,6 @@ else { */
     
     // Go to index.php
 	// echo "Part Added!";
-    include('viewTransaction.php');
+    include('phonebook.php');
 
 //} 
