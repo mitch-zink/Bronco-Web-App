@@ -36,6 +36,7 @@ include("../navbar.php")
             <form action="updateParts.php" method="post">
             <input type="text" name="itemname" value="<?php echo $part['itemname']; ?>" />
             <input type="text" name="itemdesc" value="<?php echo $part['itemdesc']; ?>" />
+            <input type="text" name="partfamily" value="<?php echo $part['partfamily']; ?>" />
             <input type="text" name="quantity" value="<?php echo $part['quantity']; ?>" />
             <input type="text" name="comments" value="<?php echo $part['comments']; ?>" />
             <input type="hidden" name="partid" value="<?php echo $partid; ?>">

@@ -25,17 +25,19 @@ $stmt->closeCursor();
             <table>
 		        <tr align="center">
                 <th>Part Name</th>
-                <th>Quantity</th>
                 <th>Item Description</th>
+                <th>Part Family</th>
+                <th>Quantity</th>
                 <th>Options</th>
                 </tr>
 		
                 <?php foreach($parts as $part) {?> 
                     <tr>
                     <td><?php echo $part['itemname']; ?></td>
+                    <td><?php echo $part['itemdesc']; ?></td>
+                    <td><?php echo $part['partfamily']; ?></td>
                     <td><?php echo $part['quantity']; ?></td>
-                    <td><?php echo $part['itemdesc']; ?></td>		
-                    
+                                   
                     <td><form action="viewtransaction.php" method="post">
                     <input type="hidden" name="partid" value="<?php echo $part['partid']; ?>">
                     <input type="submit" name="select" value="View Transactions">
