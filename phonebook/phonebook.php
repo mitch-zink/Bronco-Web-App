@@ -58,7 +58,7 @@ include("../navbar.php")
                     </td>
                     </tr> 
                     <?php } ?>  </table>  
-                    <input type="button" onclick="location.href='addPhoneForm.php';" value="Add New Contact"/>     
+                    <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>     
       </div>
       
 
