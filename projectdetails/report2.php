@@ -1,22 +1,15 @@
 <?php
-$connection = mysqli_connect('localhost', 'root', '');
+require('../dbconnect.php');
 
-$select_db = mysqli_select_db($connection, 'bronco');
+//$dsn = "SELECT partid, partfamily, FROM parts AND transtype, price, qty FROM transactions INNER JOIN transactions ON parts.partid=transactions.partid";
 
+$dsn = "SELECT partid,
+               partfamily,
+               transtype,
+               price,
+               qty
+        INNER JOIN parts.partid = transactions.partid";
 
-$dsn = 'mysql:host=localhost;dbname=tradewinds';
-$username = 'root';
-$password = '';
-
-try {
-    $db = new PDO($dsn,$username,$password);
-    echo "connected";
-}
-catch (PDOException $e) {
-    $error_message = $e->getMessage();
-}
-
-$dsn = "SELECT partid, partfamily, FROM parts AND transtype, price, qty FROM transactions INNER JOIN transactions ON parts.partid=transactions.partid";
 $result = $db->query($dsn);
 
 if ($result->num_rows > 0) {

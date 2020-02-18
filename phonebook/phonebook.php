@@ -1,11 +1,11 @@
 <?php
 
 //Connects to the MySQL database using the PDO extension
-$pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
+require("../dbconnect.php")
 
 //Select parts 
 $sql = "SELECT * FROM phonebook ORDER BY phoneid";
-$stmt = $pdo->prepare($sql);
+$stmt = $db->prepare($sql);
 $stmt->execute();
 $phones = $stmt->fetchAll();
 $stmt->closeCursor();
