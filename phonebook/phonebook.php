@@ -1,7 +1,6 @@
 <?php
-
 //Connects to the MySQL database using the PDO extension
-require("../dbconnect.php")
+require_once("../dbconnect.php");
 
 //Select parts 
 $sql = "SELECT * FROM phonebook ORDER BY phoneid";

@@ -36,6 +36,7 @@ include("../navbar.php")
             <input type="text" name="zip" placeholder="Zip Code" value="<?php echo $contact['zip'] ?>">
             <input type="text" name="email" placeholder="Email Address" value="<?php echo $contact['emailaddress'] ?>">
             <input type="text" name="phone" placeholder="Phone Number" value="<?php echo $contact['phonenumber'] ?>">
+            <input type="hidden" name="phoneid" value="<?php echo $phoneid ?>">
             <input type="submit" value="Submit Changes">
          </form>
         </div>
