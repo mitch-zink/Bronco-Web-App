@@ -1,32 +1,17 @@
 <?php
+require("../dbconnect.php");
 
-//Connects to the MySQL database using the PDO extension
-$pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
-
-$transid = filter_input(INPUT_POST, "transid", FILTER_VALIDATE_INT);
-
-
-//Select parts 
-$sql = "SELECT * FROM transaction WHERE transid = :transid";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':transid', $transid);
-$stmt->execute();
-$tran = $stmt->fetch();
-$stmt->closeCursor();
-
-$sql1 = "SELECT * FROM parts ORDER BY partid";
-$stmt1 = $pdo->prepare($sql1);
-$stmt1->execute();
-$parts = $stmt1->fetchAll();
-$stmt1->closeCursor();
+$phoneid = filter_input(INPUT_POST, "phoneid");
 
 //Select phonebook info
-$sql2 = "SELECT * FROM phonebook ORDER BY phoneid";
-$stmt2 = $pdo->prepare($sql2);
-$stmt2->execute();
-$contacts = $stmt2->fetchAll();
-$stmt2->closeCursor();
-
+$sql = "SELECT * FROM phonebook
+        WHERE phoneID = :phoneid";
+$stmt = $db->prepare($sql);
+$stmt->bindValue(":phoneid", $phoneid);
+$stmt->execute();
+$contact = $stmt->fetch();
+$stmt->closeCursor();
+print_r($contact['firstname']);
 ?>
 
 <!DOCTYPE html>
@@ -38,36 +23,21 @@ $stmt2->closeCursor();
    <?php
 include("../navbar.php")
 ?>
-        <div class="form-style-6">
-      
-        <h1>Modify Transaction</h1>
-            <form action="updateTransaction.php" method="post">
-            <h2>Please Select a Part</h2>
-            <form action= "addTransactionForm.php" method = "post">
-		    <select name = "partid">
-            <option value="" disabled selected>Choose a part</option>
-                <?php foreach($parts as $part) : ?>
-			    <option value = "<?php echo $part['partid']; ?>">
-			    <?php echo $part['itemname']; ?>
-			    </option>
-		    <?php endforeach ?>
-		    </select>
-            <select name = "custid">
-            <option value="" disabled selected>Select Transaction Party</option>
-                <?php foreach($contacts as $contact) : ?>
-			    <option value = "<?php echo $contact['phoneid']; ?>">
-			    <?php echo $contact['business'].' '.$contact['firstname'].' '.$contact['lastname']; ?>
-			    </option>
-		    <?php endforeach ?>
-		    </select>
-            <select name ="type" placeholder="Select Transaction Type">
-            <option value="Buyer">Buyer</option>
-            <option value="Seller">Seller</option>
-            </select>
-            <input type="text" name="price" placeholder="Price" />
-            <input type="text" name="date" placeholder="Date mm/dd/yyyy" />
-            <input type="text" name="quantity" placeholder="Quantity" />
-            <input type="submit" value="Update Transaction" />
+        <div class="form-style-6">      
+        <h1>Update Contact</h1>
+          <form action="updateContact.php" method="post">
+            <input type="text" name="fname" placeholder="First Name" value="<?php echo $contact['firstname'] ?>">
+            <input type="text" name="lname" placeholder="Last Name" value="<?php echo $contact['lastname'] ?>">
+            <input type="text" name="business" placeholder="Business Name" value="<?php echo $contact['business'] ?>">
+            <input type="text" name="addr1" placeholder="Address Line 1" value="<?php echo $contact['addr1'] ?>">
+            <input type="text" name="addr2" placeholder="Address Line 2" value="<?php echo $contact['addr2'] ?>">
+            <input type="text" name="city" placeholder="City" value="<?php echo $contact['city'] ?>">
+            <input type="text" name="state" placeholder="State" value="<?php echo $contact['state'] ?>">
+            <input type="text" name="zip" placeholder="Zip Code" value="<?php echo $contact['zip'] ?>">
+            <input type="text" name="email" placeholder="Email Address" value="<?php echo $contact['emailaddress'] ?>">
+            <input type="text" name="phone" placeholder="Phone Number" value="<?php echo $contact['phonenumber'] ?>">
+            <input type="hidden" name="phoneid" value="<?php echo $phoneid ?>">
+            <input type="submit" value="Submit Changes">
          </form>
         </div>
         

@@ -1,37 +1,52 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
+require_once("../dbconnect.php");
 
 //fetch inputs
-$transid = filter_input(INPUT_POST, "transid");
 $phoneid = filter_input(INPUT_POST, "phoneid");
-$partid = filter_input(INPUT_POST, "part_id");
-$type = filter_input(INPUT_POST, "type");
-$price = filter_input(INPUT_POST, "price");
-$date = filter_input(INPUT_POST, "date");
-$quantity = filter_input(INPUT_POST, "quantity");
+$fname = filter_input(INPUT_POST, "fname");
+$lname = filter_input(INPUT_POST, "lname");
+$business = filter_input(INPUT_POST, "business");
+$addr1 = filter_input(INPUT_POST, "addr1");
+$addr2 = filter_input(INPUT_POST, "addr2");
+$city = filter_input(INPUT_POST, "city");
+$state = filter_input(INPUT_POST, "state");
+$zip = filter_input(INPUT_POST, "zip", FILTER_VALIDATE_INT);
+$email = filter_input(INPUT_POST, "email");
+$phone = filter_input(INPUT_POST, "phone");
 
 
 //validate goes here
 
    
     //update vendor 
-	$sql = 'UPDATE transaction
-                SET phoneid =:phoneid, partid =:partid, type =:type, price =:price, 
-                date =:date, quantity =:quantity where transid =:transid';
-      
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':phoneid', $phoneid);
-        $stmt->bindValue(':partid', $partid);
-        $stmt->bindValue(':date', $date);
-        $stmt->bindValue(':price', $price);
-        $stmt->bindValue(':type', $type);
-        $stmt->bindValue(':quantity', $quantity);
-        $stmt->bindValue(':transid', $transid);
-      
+	$sql = 'UPDATE phonebook
+            SET firstname = :fname,
+                lastname = :lname,
+                business = :business,
+                addr1 = :addr1,
+                addr2 = :addr2,
+                city = :city,
+                state = :state,
+                zip = :zip,
+                emailaddress = :email,
+                phonenumber = :phone
+            WHERE phoneid = :phoneid';
+        $stmt = $db->prepare($sql);     
+        $stmt->bindvalue(":fname", $fname);
+        $stmt->bindValue(":lname", $lname);
+        $stmt->bindValue(":business", $business);
+        $stmt->bindValue(":addr1", $addr1);
+        $stmt->bindValue(":addr2", $addr2);
+        $stmt->bindValue(":city", $city);
+        $stmt->bindValue(":state", $state);
+        $stmt->bindValue(":zip", $zip);
+        $stmt->bindValue(":email", $email);
+        $stmt->bindValue(":phone", $phone);
+        $stmt->bindValue("phoneid", $phoneid);
         $stmt->execute();
         $stmt->closeCursor();
     
     // Go to index.php
-	echo "Transaction Updated!";
-    include('viewTransaction.php');
+	echo "Contact Updated!";
+    include('phonebook.php');
 ?>

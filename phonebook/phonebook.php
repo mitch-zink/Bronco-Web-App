@@ -1,11 +1,10 @@
 <?php
-
 //Connects to the MySQL database using the PDO extension
-$pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
+require_once("../dbconnect.php");
 
 //Select parts 
 $sql = "SELECT * FROM phonebook ORDER BY phoneid";
-$stmt = $pdo->prepare($sql);
+$stmt = $db->prepare($sql);
 $stmt->execute();
 $phones = $stmt->fetchAll();
 $stmt->closeCursor();
@@ -59,7 +58,7 @@ include("../navbar.php")
                     </td>
                     </tr> 
                     <?php } ?>  </table>  
-                    <input type="button" onclick="location.href='addPhoneForm.php';" value="Add New Contact"/>     
+                    <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>     
       </div>
       
 
