@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <?php
-include("navbar.php")
-?>
+ 
         <link rel="stylesheet" type="text/css" href="../css.css">
     </head>
     <body>
-
+   <?php
+include("../navbar.php")
+?>
         <h1>Add a New Part</h1>
         <div class="form-style-6">
             <h1>Enter Parts Information</h1>

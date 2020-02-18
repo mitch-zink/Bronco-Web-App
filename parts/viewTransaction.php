@@ -86,8 +86,9 @@ include("../navbar.php")
                     <form action="viewContact.php" method="post">
                     <input type="hidden" name="phoneid" value="<?php echo $tran['phoneid']; ?>">
                     <input type="submit" name="select" value="View Contact">
-                    </tr><?php } ?>
-                    </form>
+                   </form></td>
+                   </tr><?php } ?>
+                    
                     </table> 
                     <input type="button" onclick="location.href='addTransactionForm.php';" value="Add New Transaction"/>     
       </div>

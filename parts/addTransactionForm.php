@@ -6,6 +6,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
 if(!isset($partid)) {
     $partid = filter_input(INPUT_POST, "partid", FILTER_VALIDATE_INT);
 }
+var_dump($partid);
 
 //Select parts 
 $sql = "SELECT * FROM parts ORDER BY partid";
@@ -53,7 +54,7 @@ $stmt2->closeCursor();
         
             <h1>Enter Transaction Details</h1>
             <form action="addTransaction.php" method="post">
-            <select name = "custid">
+            <select name = "phoneid">
             <option value="" disabled selected>Select Transaction Party</option>
                 <?php foreach($contacts as $contact) : ?>
 			    <option value = "<?php echo $contact['phoneid']; ?>">
@@ -64,13 +65,13 @@ $stmt2->closeCursor();
             <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>
             <br><br>
             <select name ="type" placeholder="Select Transaction Type">
-            <option value="buyer">Buyer</option>
-            <option value="seller">Seller</option>
+            <option value="Buyer">Buyer</option>
+            <option value="Seller">Seller</option>
             </select>
             <input type="text" name="price" placeholder="Price" />
             <input type="text" name="date" placeholder="Date mm/dd/yyyy" />
             <input type="text" name="quantity" placeholder="Quantity" />
-            <input type="hidden" name="part_id" value="<?php echo $partid; ?>">
+            <input type="hidden" name="partid" value="<?php echo $partid; ?>">
             <input type="submit" value="Enter Transaction" />
          </form>
                 <?php } ?>
