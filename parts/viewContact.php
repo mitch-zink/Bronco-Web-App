@@ -20,11 +20,11 @@ $stmt->closeCursor();
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="stylesheet" type="text/css" href="css.css">
+      <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
    <?php
-include("navbar.php")
+include("../navbar.php")
 ?>
       <div class="form-style-6">
           <h1>View Phonebook Contact</h1>
@@ -56,13 +56,7 @@ include("navbar.php")
                     <td><?php echo $phone['zip']; ?></td>
                     <td><?php echo $phone['emailaddress']; ?></td>
                     <td><?php echo $phone['phonenumber']; ?></td>
-                    </tr> <?php } ?>  </table>                    
-                    <form action="viewContact.php" method="post">
-                    <input type="hidden" name="phoneid" value="<?php echo $phone['phoneid']; ?>">
-                    <input type="submit" name="select" value="Modify Contact">
-                    </form>
-                    
-                    <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>     
+                    </tr> <?php } ?>      
       </div>
       <script src="js/scripts.js"></script>
    </body>
