@@ -1,28 +1,77 @@
 <?php
 require('../dbconnect.php');
+include("../navbar.php");
 
-//$dsn = "SELECT partid, partfamily, FROM parts AND transtype, price, qty FROM transactions INNER JOIN transactions ON parts.partid=transactions.partid";
+$action = filter_input(INPUT_POST, 'action');
+$partfamily = filter_input(INPUT_POST, 'partfamily');
 
-$dsn = "SELECT partid,
-               partfamily,
-               transtype,
-               price,
-               qty
-        INNER JOIN parts.partid = transactions.partid";
-
-$result = $db->query($dsn);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    $sum = 0;
-    while($row = $result->fetch_assoc()) {
-        echo "$sum";
-        echo "id: " . $row["partid"], "family: " , $row["partfamily"]. "type: " . $row["transtype"]. "price: " , $row["price"], "quantity: " , $row["qty"], "<br>";
-        $sum = $sum + "price";
-        echo "$sum";
-    }
-} else {
-    echo "0 results";
+$queryReport = "SELECT itemname,
+                       transtype,
+                       price,
+                       transactions.quantity
+                FROM parts, transactions
+                WHERE parts.partid = transactions.partid
+                AND parts.partfamily = :partfamily";
+$result = $db->prepare($queryReport);
+$result->bindValue(":partfamily", $partfamily);
+$result->execute();
+$report = $result->fetchAll();
+$result->closeCursor();
+  
+if($action == "View Family Report"){
+  $total = 0;
+  foreach($report as $part){
+    $total += ($part['price'] * $part['quantity']);
+  }
 }
- $db->close();
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css.css">
+</head>
+<body>
+
+<h1 align="center">View Reports</h1>
+
+<?php if($action != "View Family Report") { ?>
+<div class="form-style-6">
+  <form method="post">
+    <h1>Select Part Family</h1>
+    <select id="partfamily" name="partfamily">
+      <option value="body">Body</option>
+      <option value="drivetrain">Drive Train</option>
+      <option value="engine">Engine</option>
+      <option value="exhaust">Exhaust</option>
+      <option value="suspension">Suspension</option>      
+    </select>
+    <input type="submit" name="action" value="View Family Report">
+  </form>
+</div>
+
+<?php }else{ ?>
+<div class="form-style-6">
+<h1><?php echo ucfirst($partfamily) ?></h1>
+  <table align="center">
+    <tr>
+      <th>Part Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  <?php foreach($report as $part) {?>
+    <tr>
+      <td><?php echo ucwords($part['itemname']); ?></td>
+      <td><?php echo $part['price']; ?></td>
+      <td><?php echo $part['quantity']; ?></td>
+    </tr>
+  <?php } ?>
+    <tr>
+      <th>Total Spent on Part Family</th>
+      <td><?php echo $total; ?></td>
+    </tr>
+  </table>
+</div>
+<?php } ?>
+</body>
+</html>

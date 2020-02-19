@@ -2,7 +2,7 @@
 require('../dbconnect.php');
 include("../navbar.php");
 
-$projselect = filter_input(INPUT_POST, "projselect");
+$action = filter_input(INPUT_POST, "action");
 $projectid = filter_input(INPUT_POST, "projectid", FILTER_VALIDATE_INT);
 
 $queryProjects = "SELECT * FROM projects
@@ -44,9 +44,9 @@ foreach($parts as $part){
 </head>
 <body>
 
-<h1>View Reports</h1>
+<h1 align="center">View Reports</h1>
 
-<?php if($projselect != "View Report") { ?>
+<?php if($action != "View Report") { ?>
 <div class="form-style-6">
   <form method="post">
     <h1>Select Project</h1>
@@ -55,7 +55,7 @@ foreach($parts as $part){
       <option value="<?php echo $project['projectid'] ?>"><?php echo $project['projectname'] ?></option>
     <?php } ?>
     </select>
-    <input type="submit" name="projselect" value="View Report">
+    <input type="submit" name="action" value="View Report">
   </form>
 </div>
 
@@ -66,10 +66,12 @@ foreach($parts as $part){
     <tr>
       <th>Purchase Price</th>
       <th>Investment Costs</th>
+      <th>Total Spent</th>
     </tr>
     <tr>
       <td>$<?php echo $detail['purchprice']; ?></td>
       <td>$<?php echo $partCosts; ?></td>
+      <td>$<?php echo $detail['purchprice'] + $partCosts; ?></td>
     </tr>
   </table>
 <?php } }?>
