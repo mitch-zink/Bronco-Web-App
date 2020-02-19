@@ -1,9 +1,9 @@
 <?php
 //Connects to the MySQL database using the PDO extension
-require_once("../dbconnect.php");
-include("../navbar.php")
+require("../dbconnect.php");
 
-//Select parts 
+
+//Select Contact
 $sql = "SELECT * FROM phonebook ORDER BY phoneid";
 $stmt = $db->prepare($sql);
 $stmt->execute();
@@ -18,6 +18,7 @@ $stmt->closeCursor();
       <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
+   <?php include("../navbar.php") ?>;
       <div class="form-style-6">
           <h1>View Phonebook Contact</h1>
             <table>

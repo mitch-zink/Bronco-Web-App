@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
+require("../dbconnect.php");
 //fetch inputs
 $phoneid = filter_input(INPUT_POST, "phoneid");
 $type = filter_input(INPUT_POST, "type");
@@ -21,12 +21,12 @@ if ($itname === null || $itname === false ||
 else { */
    
     //Insert vendor 
-	$sql = 'INSERT INTO transaction
+	$sql = 'INSERT INTO transactions
 				(phoneid, partid, date, price, transtype, quantity)
 			  VALUES
 				(:phoneid, :partid, :date, :price, :type, :quantity)';
       
-      $stmt = $pdo->prepare($sql);
+      $stmt = $db->prepare($sql);
       $stmt->bindValue(':phoneid', $phoneid);
       $stmt->bindValue(':partid', $partid);
       $stmt->bindValue(':date', $date);

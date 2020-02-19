@@ -4,10 +4,10 @@
 $pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
 
 $transid = filter_input(INPUT_POST, "transid", FILTER_VALIDATE_INT);
-var_dump($transid);
+
 
 //Select parts 
-$sql = "SELECT * FROM transaction WHERE transid = :transid";
+$sql = "SELECT * FROM transactions WHERE transid = :transid";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':transid', $transid);
 $stmt->execute();

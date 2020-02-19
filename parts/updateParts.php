@@ -1,10 +1,10 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
+require("../dbconnect.php");
 //fetch inputs
 $partid = filter_input(INPUT_POST, "partid");
 $itemname = filter_input(INPUT_POST, "itemname");
 $itemdesc = filter_input(INPUT_POST, "itemdesc");
-$partfamily = filter_input(INPUT_POST, "partfamily")
+$partfamily = filter_input(INPUT_POST, "partfamily");
 $quantity = filter_input(INPUT_POST, "quantity", FILTER_VALIDATE_INT);
 $comments = filter_input(INPUT_POST, "comments");
 
@@ -16,7 +16,7 @@ $comments = filter_input(INPUT_POST, "comments");
 				SET itemname =:itemname, itemdesc =:itemdesc, partfamily =:partfamily, quantity =:quantity, 
                 comments =:comments where partid =:partid';
       
-        $stmt = $pdo->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bindValue(':itemname', $itemname);
         $stmt->bindValue(':itemdesc', $itemdesc);
         $stmt->bindValue(':partfamily', $partfamily);

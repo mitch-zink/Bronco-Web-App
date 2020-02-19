@@ -8,8 +8,8 @@ if(!isset($partid)) {
 }
 
 //Select parts 
-$sql = "SELECT phonebook.phoneid, firstname, lastname, business, transid, transaction.phoneid, transtype, date, price, transaction.quantity, parts.partid, itemname 
-         FROM phonebook, transaction, parts where phonebook.phoneid = transaction.phoneid AND transaction.partid = parts.partid AND transaction.partid = :partid";
+$sql = "SELECT phonebook.phoneid, firstname, lastname, business, transid, transactions.phoneid, transtype, date, price, transactions.quantity, parts.partid, itemname 
+         FROM phonebook, transactions, parts where phonebook.phoneid = transactions.phoneid AND transactions.partid = parts.partid AND transactions.partid = :partid";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':partid', $partid);
 $stmt->execute();

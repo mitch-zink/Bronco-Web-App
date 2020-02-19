@@ -10,14 +10,12 @@ $price = filter_input(INPUT_POST, "price");
 $date = filter_input(INPUT_POST, "date");
 $quantity = filter_input(INPUT_POST, "quantity");
 
-var_dump($transid);
-var_dump($phoneid);
-var_dump($partid);
+
 //validate goes here
 
    
     //update vendor 
-	$sql = 'UPDATE transaction
+	$sql = 'UPDATE transactions
                 SET phoneid =:phoneid, partid =:partid, transtype =:type, price =:price, 
                 date =:date, quantity =:quantity WHERE transid =:transid';
       
