@@ -44,7 +44,7 @@ if($action == "View Family Report"){
       <option value="brakes">Brakes</option>
       <option value="coolingsystem">Cooling System</option>
       <option value="drivetrain">Drive Train</option>
-      <option value="electrical">electrical</option>
+      <option value="electrical">Electrical</option>
       <option value="engine">Engine</option>
       <option value="exhaust">Exhaust</option>
       <option value="interior">Interior</option>
