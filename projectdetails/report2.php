@@ -41,9 +41,13 @@ if($action == "View Family Report"){
     <h1>Select Part Family</h1>
     <select id="partfamily" name="partfamily">
       <option value="body">Body</option>
+      <option value="brakes">Brakes</option>
+      <option value="coolingsystem">Cooling System</option>
       <option value="drivetrain">Drive Train</option>
+      <option value="electrical">electrical</option>
       <option value="engine">Engine</option>
       <option value="exhaust">Exhaust</option>
+      <option value="interior">Interior</option>
       <option value="suspension">Suspension</option>      
     </select>
     <input type="submit" name="action" value="View Family Report">
