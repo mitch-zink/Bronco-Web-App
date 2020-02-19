@@ -74,6 +74,10 @@ foreach($parts as $part){
       <td>$<?php echo $detail['purchprice'] + $partCosts; ?></td>
     </tr>
   </table>
+<form action="reports.php" align="center">
+  <input type="submit" value="Back">
+</form>
+</div>
 <?php } }?>
 
 </body>

@@ -62,15 +62,20 @@ if($action == "View Family Report"){
   <?php foreach($report as $part) {?>
     <tr>
       <td><?php echo ucwords($part['itemname']); ?></td>
-      <td><?php echo $part['price']; ?></td>
+      <td><?php echo '$'.$part['price']; ?></td>
       <td><?php echo $part['quantity']; ?></td>
     </tr>
   <?php } ?>
+    <tr></tr>
+    <tr></tr>
     <tr>
-      <th>Total Spent on Part Family</th>
-      <td><?php echo $total; ?></td>
+      <th>Total Spent on Part Family:</th>
+      <td><?php echo '$'.$total; ?></td>
     </tr>
   </table>
+<form action="report2.php" align="center">
+  <input type="submit" value="Back">
+</form>
 </div>
 <?php } ?>
 </body>
