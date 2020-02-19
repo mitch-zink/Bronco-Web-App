@@ -23,7 +23,6 @@ include("../navbar.php")
                     <input type="text" name="zip" placeholder="Zip" />
                     <input type="text" name="email" placeholder="Email Address" />
                     <input type="text" name="phone" placeholder="Phone Number" />
-                    <textarea type="text" name="comment" placeholder="Comments"></textarea>
                     <input type="submit" value="Add Contact" />
                 </form>
               
