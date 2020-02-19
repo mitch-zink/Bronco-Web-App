@@ -32,6 +32,9 @@ $statement2->execute();
 $projects = $statement2->fetchAll();
 $statement2->closeCursor();
 
+if($cat_id_1 == '0'){
+    header('location: createnewproject.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +51,7 @@ include("../navbar.php")
          <form action="#" name="DDL" method="get">
             <select name="cat_id_1">
                <option></option>
+               <option value='0'>New Project</option>
                <?php
 while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
     echo '<option value="' . $row['projectid'] . '">' . $row['projectname'] . '</option>';
