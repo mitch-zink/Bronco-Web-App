@@ -18,7 +18,7 @@ $stmt->closeCursor();
       <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
-   <?php include("../navbar.php") ?>;
+   <?php include("../navbar.php"); ?>
       <div class="form-style-6">
           <h1>View Phonebook Contact</h1>
             <table>

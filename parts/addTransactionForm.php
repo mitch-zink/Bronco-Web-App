@@ -36,7 +36,7 @@ $stmt2->closeCursor();
        <h1>Add Transaction</h1>
       <div class="form-style-6">
       
-            <h2>Please Select a Part</h2>
+            <h1>Please Select a Part</h1>
             <form action= "addTransactionForm.php" method = "post">
 		    <select name = "partid">
             <option value="" disabled selected>Choose a part</option>
@@ -62,7 +62,7 @@ $stmt2->closeCursor();
 			    </option>
 		    <?php endforeach ?>
 		    </select>
-            <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>
+            <input type="button" onclick="location.href='../phonebook/addContactForm.php';" value="Add New Contact"/>
             <br><br>
             <select name ="type" placeholder="Select Transaction Type">
             <option value="Buyer">Buyer</option>
