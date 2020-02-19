@@ -6,7 +6,7 @@ $type = filter_input(INPUT_POST, "type");
 $price = filter_input(INPUT_POST, "price");
 $date = filter_input(INPUT_POST, "date");
 $quantity = filter_input(INPUT_POST, "quantity");
-$partid = filter_input(INPUT_POST, "part_id");
+$partid = filter_input(INPUT_POST, "partid");
 
 
 /*//validate
