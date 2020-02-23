@@ -8,6 +8,13 @@ include("../navbar.php")
 <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
 <body>
+<div class="dropdown">
+  <button class="dropbtn">About Us</button>
+  <div class="dropdown-content">
+    <a onClick="location.href='../about/purpose.php'">Purpose</a>
+    <a onClick="location.href='../about/faq.php'">FAQ</a>
+  </div>
+</div>
 <?php 
 echo "<h3>About Us</h3>";
 echo "<hr>";
