@@ -33,6 +33,7 @@ include("../navbar.php")
 ?>
       <!-- Form -->
       <div class="form-style-6">
+      <h1>User Login</h1>
          <body id="body_bg">
             <form id="login-form" method="post" action="login.php">
                <p>

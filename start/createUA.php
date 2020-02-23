@@ -39,6 +39,7 @@ include("../navbar.php")
 ?>
 
 <div class="form-style-6">
+<h1>Create New User Account</h1>
 <form action="createua.php" method="post">
     <p>
         <input type="text" name="userid"placeholder="userid" id="userid">

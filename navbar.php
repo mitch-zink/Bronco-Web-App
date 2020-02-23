@@ -16,13 +16,13 @@
   <li><a href="../about/faq.php">faq</a></li>
   <li><a href="../home/home.php">home</a></li>
   <li><a href="../home/homepage.php">homepage</a></li>
-  <li><a href="../parts/inventory.php">inventory</a></li>
+  <!--<li><a href="../parts/inventory.php">inventory</a></li>-->
   <li><a href="../start/login.php">login</a></li>
   <li><a href="../start/logout.php">logout</a></li>
   <li><a href="../project/openproject.php">openproject</a></li>
   <li><a href="../parts/parts.php">parts</a></li>
   <li><a href="../phonebook/phonebook.php">phonebook</a></li>
-  <li><a href="../project/projects.php">projects</a></li>
+  <!--<li><a href="../project/projects.php">projects</a></li>-->
   <li><a href="../about/purpose.php">purpose</a></li>
   <li><a href="../projectdetails/reports.php">reports</a></li>
   <li><a href="../projectdetails/report2.php">report2</a></li>
