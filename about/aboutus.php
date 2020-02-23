@@ -8,7 +8,6 @@ include("../navbar.php")
 <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
 <body>
-
 <?php 
 echo "<h3>About Us</h3>";
 echo "<hr>";
@@ -19,6 +18,9 @@ echo "<img src=1972_Bronco.jpg width=300 height=200>";
 echo ("<pre>After enjoying my trusty steed for a few decades, I sold it and bought a 1974 Bronco in rough shape (pictured below). 
 Time to start tracking how much this newest project is costing me.</pre></h3>");
 echo "<img src=1974_Bronco.jpg width=300 height=200>";
+echo "";
+echo ("<pre></pre>");
 ?>
+<input type="button" onClick="location.href='../home/home.php'" name="submit1" value="Home"; 
 </body>
 </html>
