@@ -45,10 +45,10 @@ include("../navbar.php")
         <input type="text" name="userid"placeholder="userid" id="userid">
     </p>
     <p>
-        <input type="text"placeholder="username" name="username" id="username">
+        <input type="text"placeholder="username" name="username" id="username" size="6">
     </p>
     <p>
-        <input type="text" name="password" placeholder="password"id="password">
+        <input type="text" name="password" placeholder="password"id="password" pattern=".{8,}" title="Eight or more characters">
     </p>
     <input type="submit" value="Submit">
 </form>
