@@ -19,8 +19,10 @@ $query = $db->query("select * from projects order by projectname asc");
 
 // Checks for a null value
 if (!isset($cat_id_1)) {
-    $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
+    $cat_id_1 = filter_input(INPUT_POST, 'cat_id_1', FILTER_VALIDATE_INT);
 }
+
+$action = filter_input(INPUT_POST, 'action');
 
 // Runs a query based on the selected projectid from the DDL
 $queryprojects = 'SELECT * FROM projects
@@ -48,9 +50,8 @@ include("../navbar.php")
       <!-- DDL -->
       <div class="form-style-6">
          <h1>Select a project to continue</h1>
-         <form action="#" name="DDL" method="get">
+         <form action="#" name="DDL" method="post">
             <select name="cat_id_1">
-               <option></option>
                <option value='0'>New Project</option>
                <?php
 while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -113,7 +114,14 @@ foreach ($projects as $project):
             <?php
 endforeach;
 ?>
+
          </form>
+         <?php if($action == "Submit"){ ?>
+         <form action="../projectdetails/workcompleted.php" method="post">
+            <input type="hidden" name="projid" value="<?php echo $project["projectid"]; ?>">
+            <input type="submit" value="View Work Completed">
+         </form>
+         <?php } ?>
       </div>
    </body>
 </html>
