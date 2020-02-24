@@ -30,6 +30,23 @@ ul {
   }
 /* nav bar */ 
 
+/* table styling */
+th, td {
+  padding: 15px;
+  text-align: left;
+} 
+table {
+  width: 100%;
+}
+
+th {
+  height: 50px;
+} 
+table, th, td {
+  border: 1px solid black;
+} 
+tr:nth-child(odd) {background-color: #f2f2f2;} 
+
 /* form for inventory.php */ 
   .form-style-6{
     font: 95% Arial, Helvetica, sans-serif;

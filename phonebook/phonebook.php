@@ -54,9 +54,9 @@ $stmt->closeCursor();
                     <input type="hidden" name="phoneid" value="<?php echo $phone['phoneid']; ?>">
                     <input type="submit" name="select" value="Modify Contact">
                     </form>
-                    </td>
                     </tr> 
-                    <?php } ?>  </table>  
+                    <?php } ?>   
+                    </table> 
                     <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>     
       </div>
       

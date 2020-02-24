@@ -18,10 +18,10 @@ include("../navbar.php")
                     <input type="text" name="addr1" placeholder="Street Address" />
                     <input type="text" name="addr2" placeholder="Apartment or other building number" />
                     <input type="text" name="city" placeholder="City" />
-                    <input type="text" name="state" placeholder="State" />
-                    <input type="text" name="zip" placeholder="Zip" />
-                    <input type="text" name="email" placeholder="Email Address" />
-                    <input type="text" name="phone" placeholder="Phone Number" />
+                    <input type="text" name="state" placeholder="State" size="2" />
+                    <input type="text" name="zip" placeholder="Zip" pattern="[0-9]{5}" />
+                    <input type="text" name="email" placeholder="Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
+                    <input type="text" name="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
                     <input type="submit" value="Add Contact" />
                 </form>
               

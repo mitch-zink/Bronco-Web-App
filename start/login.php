@@ -37,10 +37,10 @@ include("../navbar.php")
          <body id="body_bg">
             <form id="login-form" method="post" action="login.php">
                <p>
-                  <input type="text" name="username"placeholder="username" id="username">
+                  <input type="text" name="username"placeholder="username" id="username">  
                </p>
                <p>
-                  <input type="text" type="password" name="password" placeholder="password" id="password">
+                  <input type="text" type="password" name="password" placeholder="password" id="password" pattern=".{8,}" title="Eight or more characters">
                </p>
                <input type="submit" value="Submit">
             </form>
