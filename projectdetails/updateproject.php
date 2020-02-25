@@ -40,7 +40,9 @@ $statement2->closeCursor();
 // Code for update statement 
 // Get data from form
 
-
+if(!isset($projectid)) {
+   $projectid = filter_input(INPUT_POST, "projectid", FILTER_VALIDATE_INT);
+}
 
 $projectid = $_POST['projectid'];
 $projectname = $_POST['projectname'];

@@ -27,6 +27,7 @@
   <li><a href="../projectdetails/reports.php">reports</a></li>
   <li><a href="../projectdetails/report2.php">report2</a></li>
   <li><a href="../projectdetails/updateproject.php">updateproject</a></li>
+  <li><a href="../projectdetails/updateprojectform.php">updateprojectform</a></li>
   <li><a href="../parts/viewtransaction.php">viewtransaction</a></li>
   <li><a href="../projectdetails/workcompleted.php">workcompleted</a></li>
 </ul>
