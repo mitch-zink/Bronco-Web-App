@@ -22,7 +22,6 @@ $stmt3->bindValue(":projectid", $projid);
 $stmt3->execute();
 $projName = $stmt3->fetch();
 $stmt3->closeCursor();
-
 ?>
 
 <!DOCTYPE html>
@@ -40,12 +39,20 @@ $stmt3->closeCursor();
       <th>Work Completed</th>
       <th>Date Completed</th>
       <th>Description</th>
+      <th>&nbsp</th>
     </tr>
   <?php foreach($work as $w){ ?>
     <tr>
       <td><?php echo $w['workname']; ?></td>
       <td><?php echo $w['dateperformed']; ?></td>
       <td><?php echo $w['workdesc']; ?></td>
+      <td>
+        <form action="updateworkform.php" method="post">
+          <input type="hidden" name="projid" value="<?php echo $projid ?>">
+          <input type="hidden" name="workid" value="<?php echo $w['workid']; ?>">
+          <input type="submit" value="Update Work Completed">
+        </form>
+      </td>
     </tr>
   <?php } ?>
   </table>

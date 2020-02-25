@@ -14,7 +14,7 @@
       <h1>Enter Work Information</h1>
         <form action="addwork.php" method="post">
           <input type="text" name="workname" placeholder="Work Name"/>
-          <input type="text" name="workdate" placeholder="Date mm/dd/yyyy">
+          <input type="text" name="workdate" placeholder="Date yyyy/mm/dd">
           <textarea type="text" name="workdesc" placeholder="Work Description"></textarea>
           <textarea type="text" name="workcomments" placeholder="Comments"></textarea>
           <input type="hidden" name="projid" value="<?php echo $projid; ?>">
