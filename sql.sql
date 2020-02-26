@@ -9,7 +9,7 @@ CREATE TABLE phonebook
     lastname     VARCHAR(60),
     business     VARCHAR(60), 
     addr1        VARCHAR(60)     NOT NULL, 
-    addr2        VARCHAR(60)                 DEFAULT NULL, 
+    addr2        VARCHAR(60)     DEFAULT NULL, 
     city         VARCHAR(40)     NOT NULL, 
     state        VARCHAR(2)      NOT NULL, 
     zip          VARCHAR(10)     NOT NULL, 
@@ -53,7 +53,7 @@ CREATE TABLE projects
     make            VARCHAR(60)   NOT NULL,
     model           VARCHAR(60)   NOT NULL,
     trim_pkg        VARCHAR(60)   NOT NULL,       
-    projectdesc     VARCHAR(255),
+    projectdesc     VARCHAR(255)          ,
     purchprice      DECIMAL(10,2) NOT NULL, 
     purchdate       DATE          NOT NULL, 
     sellprice       DECIMAL(10,2), 
@@ -68,6 +68,7 @@ CREATE TABLE project_parts
 (
     partid      INT             NOT NULL,
     projectid   INT             NOT NULL,
+    quantity    INT             NOT NULL,
     PRIMARY KEY (partid, projectid),
     INDEX partid (partid),
     INDEX projectid (projectid)
