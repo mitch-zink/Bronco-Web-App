@@ -64,6 +64,9 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
       </div>
       <script src="js/scripts.js"></script>
       <div class="form-style-6">
+
+
+
          <?php
 foreach ($projects as $project):
 ?>
@@ -101,13 +104,13 @@ foreach ($projects as $project):
             <input type="text" readonly  name="purchprice" placeholder="purchprice" value="Purchase Price: <?php
     echo $project["purchprice"];
 ?>" />
-            <input type="text"  readonly name="sellprice" placeholder="sellprice" value="Sell Price: <?php
+            <input type="text"  readonly  name="sellprice" placeholder="sellprice" value="Sell Price: <?php
     echo $project["sellprice"];
 ?>" />
-            <input type="text"  readonly name="selldate" placeholder="selldate" value="Sell Date: <?php
+            <input type="text"  readonly  name="selldate" placeholder="selldate" value="Sell Date: <?php
     echo $project["selldate"];
 ?>" />
-            <input type="text"  readonly name="projectcomments" placeholder="projectcomments" value="Project Comments: <?php
+            <input type="text"  readonly  name="projectcomments" placeholder="projectcomments" value="Project Comments: <?php
     echo $project["projectcomments"];
 ?>" />
             <?php
