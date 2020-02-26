@@ -25,6 +25,8 @@ if (!isset($cat_id_1)) {
     $cat_id_1 = filter_input(INPUT_GET, 'cat_id_1', FILTER_VALIDATE_INT);
 }
 
+$action = filter_input(INPUT_POST, 'action');
+
 // Runs a query based on the selected projectid from the DDL
 $queryprojects = 'SELECT * FROM projects
    							WHERE projectid = :cat_id_1
