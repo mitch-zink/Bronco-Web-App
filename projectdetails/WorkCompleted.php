@@ -4,6 +4,14 @@ require_once("../dbconnect.php");
 include("../navbar.php"); 
 
 $projid = filter_input(INPUT_POST, 'projid', FILTER_VALIDATE_INT);
+$action = filter_input(INPUT_POST, 'action');
+
+$queryProjects = 'SELECT * FROM projects
+                  ORDER BY projectname asc';
+$stmt = $db->prepare($queryProjects);
+$stmt->execute();
+$projects = $stmt->fetchAll();
+$stmt->closeCursor();
 
 $queryWork = "SELECT * FROM workcompleted
               WHERE projectid = :projectid
@@ -31,6 +39,22 @@ $stmt3->closeCursor();
 </head>
 <body>
 <h1 align="center">Work Completed</h1>
+
+<?php if($action != "Submit"){ ?>
+<div class="form-style-6">
+<h1>Select a Project</h1>
+  <form action="#" name="DDL" method="post">
+    <select name="projid">
+        <option></option>
+        <?php foreach($projects as $project){ ?>
+        <option value="<?php echo $project['projectid']; ?>"><?php echo $project['projectname']; ?></option>
+        <?php } ?>
+    </select>
+    <input type="submit" name="action" value="Submit">
+  </form>
+</div>
+
+<?php }else{ ?>
 
 <div class="form-style-6">
   <h1><?php echo $projName['projectname']; ?></h1>
@@ -61,5 +85,6 @@ $stmt3->closeCursor();
   <input type="hidden" name="projid" value="<?php echo $projid; ?>">
 </form>
 </div>
+<?php } ?>
 </body>
 </html>
