@@ -42,21 +42,22 @@ $statement2->closeCursor();
 // Code for update statement 
 // Get data from form
 
-if(!isset($projectid)) {
-   $projectid = filter_input(INPUT_POST, "projectid", FILTER_VALIDATE_INT);
-}
 
-$projectid = $_POST['projectid'];
-$projectname = $_POST['projectname'];
-$make = $_POST['make'];
-$model = $_POST['model'];
-$trim_pkg = $_POST['trim_pkg'];
-$projectdesc = $_POST['projectdesc'];
-$purchdate = $_POST['purchdate'];
-$purchprice = $_POST['purchprice'];
-$sellprice = $_POST['sellprice'];
-$selldate = $_POST['selldate'];
-$projectcomments = $_POST['projectcomments'];
+
+$projectid = filter_input(INPUT_POST, 'projectid');
+$projectname =filter_input(INPUT_POST, 'projectname');
+$make =filter_input(INPUT_POST, 'make');
+$model = filter_input(INPUT_POST, 'model');
+$trim_pkg = filter_input(INPUT_POST, 'trim_pkg');
+$projectdesc = filter_input(INPUT_POST, 'projectdesc');
+$purchdate = filter_input(INPUT_POST, 'purchdate');
+$purchprice = filter_input(INPUT_POST, 'purchprice');
+$sellprice = filter_input(INPUT_POST, 'sellprice');
+$selldate = filter_input(INPUT_POST, 'selldate');
+$projectcomments =filter_input(INPUT_POST, 'projectcomments');
+
+
+
 
 $servername = "localhost";
 $username = "root";
@@ -83,9 +84,28 @@ $sql = "UPDATE projects
             projectcomments = :projectcomments
         WHERE projectid = :cat_id_1";
 
+
+$stmt = $db->prepare($sql);
+$stmt->bindValue(':projectame', $projectname);
+$stmt->bindValue(':make', $make);
+$stmt->bindValue(':model', $model);
+$stmt->bindValue(':trim_pkg', $trim_pkg);
+$stmt->bindValue(':projectdesc', $projectdesc);
+$stmt->bindValue(':purchdate', $purchdate);
+$stmt->bindValue(':purchprice', $purchprice);
+$stmt->bindValue(':selldate', $selldate);
+$stmt->bindValue(':sellprice', $sellprice);
+$stmt->bindValue(':projectcomments', $projectcomments);
+$stmt->bindValue(':projectid', $projectid);
+
+//$stmt->execute();
+//$stmt->closeCursor();
+
+
+
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
-  //header('Location: openproject.php');
+  
 } else {
     echo "Error updating record: " . $conn->error;
 }
@@ -114,7 +134,6 @@ include("../navbar.php")
 } ?>
             </select>
             <input type="submit" name="action" value="Submit">
-         </form>
          </form>
       </div>
       <script src="js/scripts.js"></script>
