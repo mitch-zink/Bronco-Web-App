@@ -23,7 +23,7 @@ if ($itname === null || $itname === false ||
 
 else { */
    
-    //Insert vendor 
+    //Insert phonebook 
 	$sql = 'INSERT INTO phonebook
 				(firstname, lastname, business, addr1, addr2, city, state, zip, emailaddress, phonenumber)
 			  VALUES
@@ -45,7 +45,7 @@ else { */
       $stmt->closeCursor();
     
     // Go to index.php
-	// echo "Part Added!";
+	// echo "Contact Added!";
     include('phonebook.php');
 
 //} 

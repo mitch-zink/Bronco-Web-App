@@ -13,8 +13,8 @@ include("../navbar.php")
             <h1>Enter Parts Information</h1>
                 <form action="addParts.php" method="post">
                     <input type="text" name="itname" placeholder="Part Name"/>
-                    <textarea type="text" name="itdesc" placeholder="Part Description"></textarea>
-                    <select id="partfamily" name="partfamily">
+                    <textarea type="text" name="itdesc" placeholder="Part Description" ></textarea>
+                    <select id="partfamily" name="fam">
                         <option value="body">Body</option>
                         <option value="brakes">Brakes</option>
                         <option value="coolingsystem">Cooling System</option>
@@ -26,8 +26,8 @@ include("../navbar.php")
                         <option value="suspension">Suspension</option>      
                     </select>
                     <input type="text" name="quantity" placeholder="Quantity On Hand" />
-                    <textarea type="text" name="comment" placeholder="Comments"></textarea>
-                    <input type="submit" value="Add Part" />
+                    <textarea type="text" name="comments" placeholder="Comments" ></textarea>
+                    <input type="submit" value="Add Parts" />
                 </form>
                               
       </div>

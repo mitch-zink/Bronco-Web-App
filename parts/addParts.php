@@ -5,7 +5,7 @@ $itname = filter_input(INPUT_POST, "itname");
 $itdesc = filter_input(INPUT_POST, "itdesc");
 $fam = filter_input(INPUT_POST, "fam");
 $quantity = filter_input(INPUT_POST, "quantity", FILTER_VALIDATE_INT);
-$comment = filter_input(INPUT_POST, "comment");
+$comments = filter_input(INPUT_POST, "comments");
 
 /*//validate
 if ($itname === null || $itname === false || 
@@ -18,18 +18,18 @@ if ($itname === null || $itname === false ||
 
 else { */
    
-    //Insert vendor 
+    //Insert parts 
 	$sql = 'INSERT INTO parts
 				(itemname, itemdesc, partfamily, quantity, comments)
 			  VALUES
-				(:itname, :itdesc, :fam, :quantity, :comment)';
+				(:itname, :itdesc, :fam, :quantity, :comments)';
       
       $stmt = $pdo->prepare($sql);
       $stmt->bindValue(':itname', $itname);
       $stmt->bindValue(':itdesc', $itdesc);
       $stmt->bindValue(':fam', $fam);
       $stmt->bindValue(':quantity', $quantity);
-      $stmt->bindValue(':comment', $comment);
+      $stmt->bindValue(':comments', $comments);
       
       $stmt->execute();
       $stmt->closeCursor();
