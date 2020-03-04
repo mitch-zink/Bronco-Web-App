@@ -49,9 +49,7 @@ $stmt2->closeCursor();
          <h1><?php echo $selectedproject[0]["projectname"]; ?></h1>
          <form action="updateproject.php" method="post">
             <?php foreach ($selectedproject as $project): ?>
-            <label for="projectid">Project ID</label>
-            <input type="text"  input="readonly" name="projid" placeholder="projectid" value="<?php echo $project["projectid"];?>" />
-           
+                       
             <label for="projectid">Project Name</label>
             <input type="text"   name="projectname" placeholder="projectname" value="<?php echo $project["projectname"];?>" />
             
@@ -81,7 +79,9 @@ $stmt2->closeCursor();
             
            <label for="projectid">Project Comments</label>
             <input type="text"   name="projectcomments" placeholder="projectcomments" value="<?php echo $project["projectcomments"];?>" />
+            <input type="hidden" name="projid" value="<?php echo $projid;?>" />
             <input type="submit" name="action" value="Submit">
+
 
             <?php endforeach;?>
 
