@@ -6,6 +6,9 @@ $action = filter_input(INPUT_POST, 'action');
 if($action == "details"){
    header("Location: updateprojectform.php");
    exit;
+}else if($action == "projectparts"){
+   header("Location: projectParts.php");
+   exit;
 }else if($action == "workcomplete"){
    header("Location: WorkCompleted.php");
    exit;
@@ -26,10 +29,11 @@ if($action == "details"){
    <body>
   <!-- DDL -->
   <div class="form-style-6">
-         <h1>Select</h1>
+         <h1>Project Manager</h1>
          <form action="#" name="DDL" method="post">
             <select name="action">
-               <option value='0'></option>
+               <option value="" disabled selected>Please choose from the following</option>
+               <option value='projectparts'>Manage Project Parts</option>
                <option value='details'>Update Project Details</option>
                <option value='workcomplete'>Work Completed</option>
                <option value='report1'>Project Report</option>

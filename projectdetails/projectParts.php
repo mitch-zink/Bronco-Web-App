@@ -26,18 +26,8 @@ $stmt1->bindValue(':projectid', $projectid);
 $stmt1->execute();
 $parts = $stmt1->fetchAll();
 $stmt1->closeCursor();
-var_dump($parts);
+
 //var_dump($parts);
-
-//For quantity counts
-$sql2 = 'SELECT quantity FROM project_parts WHERE projectid =:projectid ';
-$stmt2 = $pdo->prepare($sql2);
-$stmt2->bindValue(":projectid", $projectid);
-$stmt2->execute();
-$pparts = $stmt2->fetchAll();
-$stmt2->closeCursor(); 
-
-
 
 ?>
 <!DOCTYPE html>
@@ -50,7 +40,8 @@ $stmt2->closeCursor();
 include("../navbar.php")
 ?>
       <div class="form-style-6">
-        <h1>Select a project to continue</h1>
+      <h1>Manage Project Parts</h1>
+        <h2>Select a project to continue</h2>
          <form action="#" method="post">
             <select name="projectid">
                <option value="" disabled selected>Please Select a Project</option>
@@ -91,6 +82,7 @@ include("../navbar.php")
                     <form action="deleteProjectParts.php" method="post">
                     <input type="hidden" name="partid" value="<?php echo $part['partid']; ?>">
                     <input type="hidden" name="projectid" value="<?php echo $part['projectid']; ?>">
+                    <input type="hidden" name="pquantity" value="<?php echo $part['quantity']; ?>"/>
                     <input type="submit" name="select" value="Remove Part">
                     </form>
                     </td>

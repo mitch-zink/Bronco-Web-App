@@ -54,7 +54,7 @@ $stmt->closeCursor();
    <div class="form-style-6">
    <?php if(isset($partfamily)) { ?>   
           <h1>Add Part to Project:<?php echo $projid;?></h1>
-            <form action="addProjectParts.php" method="post">
+            
             <table>
 		    <tr align="center">
                 <th>Part Name</th>
@@ -66,13 +66,13 @@ $stmt->closeCursor();
                     <tr>
                     <td><?php echo $part['itemname']; ?></td>
                     <td><?php echo $part['itemdesc']; ?></td>
+                    <form action="addProjectParts.php" method="post">
                     <td><input type="text" name="quantity" value="<?php echo $part['quantity']; ?>"/></td>
                     <input type="hidden" name="projectid" value="<?php echo $projid; ?>">
                     <input type="hidden" name="partid" value="<?php echo $part['partid']; ?>">
                     <td><input type="submit" name="select" value="Add Part"></td>
-                     </tr>
                      </form>
-                   
+                     </tr>
                 <?php }  ?>
             </table>
             
