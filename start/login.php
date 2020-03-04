@@ -18,9 +18,9 @@
    	if ($count == 1){
      header('Location: ../home/homepage.php');
    	}else{
-   		header('Location: login.php');
-   	}
-   	}
+         header('Location: login.php');   
+      }
+      }
    ?>
 <!DOCTYPE html>
 <html>
@@ -35,12 +35,12 @@ include("../navbar.php")
       <div class="form-style-6">
       <h1>User Login</h1>
          <body id="body_bg">
-            <form id="login-form" method="post" action="login.php">
+            <form id="login-form" method="post" action="login.php" >
                <p>
-                  <input type="text" name="username"placeholder="username" id="username">  
+                  <input type="text" name="username"placeholder="username" id="username" required>  
                </p>
                <p>
-                  <input type="text" type="password" name="password" placeholder="password" id="password" pattern=".{8,}" title="Eight or more characters">
+                  <input type="text" type="password" name="password" placeholder="password" id="password" pattern=".{8,}" title="Eight or more characters" required>
                </p>
                <input type="submit" value="Submit">
             </form>
