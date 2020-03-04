@@ -10,9 +10,8 @@ $partid = filter_input(INPUT_POST, "partid");
 
 
 /*//validate
-if ($itname === null || $itname === false || 
-		$itdesc === null || $itdesc === false || 
-		$quantity === null || $quantity === false) { 
+if ($phoneid === null || $type === null || $price === null || 
+		$date === null || $quantity === null || $partid === null) { 
         
         $error = "Invalid data. Check all fields and try again.";
     echo $error;
@@ -36,11 +35,9 @@ else { */
                      
       $stmt->execute();
       $stmt->closeCursor();
-    
-    // Go to index.php
-	// echo "Part Added!";
-    include('viewTransaction.php');
+//}     
+include('viewTransaction.php');
 
-//} 
+
 
 ?>

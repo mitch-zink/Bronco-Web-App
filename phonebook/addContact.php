@@ -12,18 +12,24 @@ $zip = filter_input(INPUT_POST, "zip");
 $email = filter_input(INPUT_POST, "email");
 $phone = filter_input(INPUT_POST, "phone");
 
-/*//validate
-if ($itname === null || $itname === false || 
-		$itdesc === null || $itdesc === false || 
-		$quantity === null || $quantity === false) { 
+/*$checkEmail = 'SELECT COUNT(*) FROM phonebook
+	                      WHERE emailAddress =:email';
+		$stmt1 = $pdo->prepare( $checkEmail);
+		$stmt1->bindValue(':email', $email);
+        $stmt1->execute();
+        $count = $stmt1->fetchColumn();
+       
+//validate
+if ($fname === null || $lname === null|| $addr1 === null || 
+        $city === null || $state === null || $zip === null || 
+        $email === null || $phone === null) { 
         
-        $error = "Invalid data. Check all fields and try again.";
+    $error = "Invalid data. Check all fields and try again.";
     echo $error;
-}
-
-else { */
-   
-    //Insert phonebook 
+}else if ($count>0) { echo "Please provide another Email Address. This address aleady exists";
+        
+}else { */
+       //Insert phonebook 
 	$sql = 'INSERT INTO phonebook
 				(firstname, lastname, business, addr1, addr2, city, state, zip, emailaddress, phonenumber)
 			  VALUES
@@ -45,7 +51,8 @@ else { */
       $stmt->closeCursor();
     
     // Go to index.php
-	// echo "Contact Added!";
+    // echo "Contact Added!";
+//}        
     include('phonebook.php');
 
 //} 

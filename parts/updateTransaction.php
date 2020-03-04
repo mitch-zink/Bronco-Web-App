@@ -11,7 +11,15 @@ $date = filter_input(INPUT_POST, "date");
 $quantity = filter_input(INPUT_POST, "quantity");
 
 
-//validate goes here
+/*//validate
+if ($transid === null || $phoneid === null || $partid === null || $type === null || $price === null || 
+		$date === null || $quantity === null) { 
+        
+        $error = "Invalid data. Check all fields and try again.";
+    echo $error;
+}
+
+else { */
 
    
     //update vendor 
@@ -30,8 +38,6 @@ $quantity = filter_input(INPUT_POST, "quantity");
       
         $stmt->execute();
         $stmt->closeCursor();
-    
-    // Go to index.php
-	echo "Transaction Updated!";
+//}
     include('viewTransaction.php');
 ?>

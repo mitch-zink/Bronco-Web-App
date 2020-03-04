@@ -8,15 +8,14 @@ $quantity = filter_input(INPUT_POST, "quantity", FILTER_VALIDATE_INT);
 $comments = filter_input(INPUT_POST, "comments");
 
 /*//validate
-if ($itname === null || $itname === false || 
-		$itdesc === null || $itdesc === false || 
-		$quantity === null || $quantity === false) { 
+if ($itname === null || $itdesc === null || $fam === null ||
+$quantity === null) { 
         
         $error = "Invalid data. Check all fields and try again.";
     echo $error;
 }
 
-else { */
+else {*/
    
     //Insert parts 
 	$sql = 'INSERT INTO parts
@@ -33,11 +32,10 @@ else { */
       
       $stmt->execute();
       $stmt->closeCursor();
-    
-    // Go to index.php
-	// echo "Part Added!";
-    include('parts.php');
+//}     
+   
+include('parts.php');
 
-//} 
+
 
 ?>

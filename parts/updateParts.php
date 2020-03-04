@@ -8,8 +8,15 @@ $partfamily = filter_input(INPUT_POST, "partfamily");
 $quantity = filter_input(INPUT_POST, "quantity", FILTER_VALIDATE_INT);
 $comments = filter_input(INPUT_POST, "comments");
 
-//validate goes here
+/*//validate
+if (partid === null || $itemname === null || $itemdesc === null || $partfamily === null ||
+    $quantity === null) { 
+        
+        $error = "Invalid data. Check all fields and try again.";
+    echo $error;
+}
 
+else { */
    
     //update vendor 
 	$sql = 'UPDATE parts
@@ -26,8 +33,6 @@ $comments = filter_input(INPUT_POST, "comments");
       
         $stmt->execute();
         $stmt->closeCursor();
-    
-    // Go to index.php
-	// echo "Part Added!";
+//}
     include('parts.php');
 ?>

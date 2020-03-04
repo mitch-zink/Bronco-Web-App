@@ -14,8 +14,23 @@ $zip = filter_input(INPUT_POST, "zip", FILTER_VALIDATE_INT);
 $email = filter_input(INPUT_POST, "email");
 $phone = filter_input(INPUT_POST, "phone");
 
+/*$checkEmail = 'SELECT COUNT(*) FROM phonebook
+	                      WHERE emailAddress =:email';
+		$stmt1 = $pdo->prepare( $checkEmail);
+		$stmt1->bindValue(':email', $email);
+        $stmt1->execute();
+        $count = $stmt1->fetchColumn();
 
-//validate goes here
+if ($fname === null || $lname === null||  $addr1 === null || 
+        $city === null || $state === null || $zip === null || 
+        $email === null || $phone === null) { 
+        
+    $error = "Invalid data. Check all fields and try again.";
+    echo $error;
+    include('phonebook.php');
+}else if ($count>0) { echo "Please provide another Email Address. This address aleady exists";
+    include('phonebook.php');
+}else {*/
 
    
     //update vendor 
@@ -45,8 +60,8 @@ $phone = filter_input(INPUT_POST, "phone");
         $stmt->bindValue("phoneid", $phoneid);
         $stmt->execute();
         $stmt->closeCursor();
-    
-    // Go to index.php
-	echo "Contact Updated!";
+    echo "Contact Updated!";
+//}
+	
     include('phonebook.php');
 ?>
