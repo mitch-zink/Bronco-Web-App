@@ -107,8 +107,8 @@ CREATE TABLE users
     username        VARCHAR(20)    NOT NULL,
     password        VARCHAR(20)    NOT NULL,
     PRIMARY KEY (userid),
-    UNIQUE INDEX (username),
-    UNIQUE INDEX (password) 
+    UNIQUE INDEX (username)
+    
 );
 
 
