@@ -21,7 +21,7 @@ $selectProject = $stmt2->fetchAll();
 $stmt2->closeCursor();
 
 //gets all parts used within a project, and the price spent on said parts
-$queryParts = "SELECT price FROM transactions, project_parts
+$queryParts = "SELECT price, project_parts.quantity FROM transactions, project_parts
                WHERE project_parts.projectid = :projectid
                AND transactions.partid = project_parts.partid";
 $stmt3 = $db->prepare($queryParts);
@@ -33,7 +33,7 @@ $stmt3->closeCursor();
 //calculates total spent on parts for a project
 $partCosts = 0;
 foreach($parts as $part){
-  $partCosts += $part['price'];
+  $partCosts += ($part['price'] * $part['quantity']);
 }
 ?>
 
