@@ -42,13 +42,13 @@ include("../navbar.php")
 <h1>Create New User Account</h1>
 <form action="createua.php" method="post">
     <p>
-        <input type="text" name="userid"placeholder="userid" id="userid">
+       <input type="text" name="userid"placeholder="userid" id="userid" readonly>
     </p>
     <p>
-        <input type="text"placeholder="username" name="username" id="username" size="6">
+        <input type="text"placeholder="username" name="username" id="username" pattern=".{3,}" title="Use 3 or more characters">
     </p>
     <p>
-        <input type="text" name="password" placeholder="password"id="password" pattern=".{8,}" title="Eight or more characters">
+        <input type="text" name="password" placeholder="password"id="password" pattern=".{8,}" title="Use 8 or more characters">
     </p>
     <input type="submit" value="Submit">
 </form>
