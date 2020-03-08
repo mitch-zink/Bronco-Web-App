@@ -66,7 +66,7 @@ $stmt->closeCursor();
                     <tr>
                     <td><?php echo $part['itemname']; ?></td>
                     <td><?php echo $part['itemdesc']; ?></td>
-                    <td><input type="text" name="quantity" value="<?php echo $part['quantity']; ?>"/></td>
+                    <td><input type="text" name="quantity" value="<?php echo $part['quantity']; ?>" pattern="[0-9]{1}" maxlength="4" title="Only 4 numbers allowed/></td>
                     <input type="hidden" name="projectid" value="<?php echo $projid; ?>">
                     <input type="hidden" name="partid" value="<?php echo $part['partid']; ?>">
                     <td><input type="submit" name="select" value="Add Part"></td>

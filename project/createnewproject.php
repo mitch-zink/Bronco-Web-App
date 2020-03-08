@@ -46,17 +46,17 @@ include("../navbar.php")
       <div class="form-style-6">
          <h1>Create New Project</h1>
          <form action="createnewproject.php" method="post">
-            <input type="text" name="projectid" placeholder="projectid" />
-            <input type="text" name="projectname" placeholder="projectname" />
-            <input type="text" name="Make" placeholder="Make" />
-            <input type="text" name="model" placeholder="model" />
-            <input type="text" name="trim_pkg" placeholder="trim_pkg" />
-            <input type="text" name="projectdesc" placeholder="projectdesc" />
-            <input type="date" name="purchdate" placeholder="purchdate" />
-            <input type="text" name="purchprice" placeholder="purchprice" />
-            <input type="text" name="sellprice" placeholder="sellprice" />
-            <input type="date" name="selldate" placeholder="selldate" />
-            <input type="text" name="projectcomments" placeholder="projectcomments" />
+            <input type="text" name="projectid" placeholder="projectid" readonly/>
+            <input type="text" name="projectname" placeholder="Project Name" pattern="[a-zA-Z0-9 ']{2,}" maxlength="15" title="Only 15 letters & numbers allowed" />
+            <input type="text" name="Make" placeholder="Make (example Ford, Chevy, Toyota)" pattern="[a-zA-Z0-9 ']{2,}" maxlength="15" title="Only 15 letters & numbers allowed" />
+            <input type="text" name="model" placeholder="Model (exapmle Bronco, Blazer, Landrover)" pattern="[a-zA-Z0-9 ']{2,}" maxlength="15" title="Only 15 letters & numbers allowed" />
+            <input type="text" name="trim_pkg" placeholder="Trim Package (example Sport, Ranger, Explorer)" pattern="[a-zA-Z0-9 ']{2,}" maxlength="15" title="Only 15 letters & numbers allowed" />
+            <input type="text" name="projectdesc" placeholder="Project Description" pattern="[a-zA-Z0-9 ']{2,}" maxlength="1000" title="Only letters & numbers allowed" />
+            <input type="date" name="purchdate" placeholder="Purchase Date" />
+            <input type="text" name="purchprice" placeholder="Purchase Price" />
+            <input type="text" name="sellprice" placeholder="Sell Price" />
+            <input type="date" name="selldate" placeholder="Sell Date" />
+            <input type="text" name="projectcomments" placeholder="Project Comments" pattern="[a-zA-Z0-9 ']{2,}" maxlength="1000" title="Only letters & numbers allowed" />
             <input type="submit" value="Submit" />
          </form>
       </div>
