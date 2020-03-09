@@ -68,7 +68,7 @@ $stmt2->closeCursor();
             <option value="Buyer">Buyer</option>
             <option value="Seller">Seller</option>
             </select>
-            <input type="text" name="price" placeholder="Price" pattern="[0-9]*[.]?[0-9]+/>
+            <input type="text" name="price" placeholder="Price" />
             <input type="date" name="date" placeholder="Date mm/dd/yyyy" />
             <input type="text" name="quantity" placeholder="Quantity" pattern="[0-9]{1,}" maxlength="4" title="Only 4 numbers allowed" />
             <input type="hidden" name="partid" value="<?php echo $partid; ?>">

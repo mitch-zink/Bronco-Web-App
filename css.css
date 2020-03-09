@@ -47,6 +47,24 @@ table, th, td {
 } 
 tr:nth-child(odd) {background-color: #f2f2f2;} 
 
+/* scrollbars for the tables */
+.DivToScroll{   
+  background-color: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px 0 4px 0;
+  color: #3B3C3E;
+  font-size: 12px;
+  font-weight: bold;
+  left: -1px;
+  padding: 10px 7px 5px;
+}
+
+.DivWithScroll{
+  height:120px;
+  overflow:scroll;
+  overflow-x:hidden;
+}
+
 /* form for inventory.php */ 
   .form-style-6{
     font: 95% Arial, Helvetica, sans-serif;

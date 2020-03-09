@@ -103,10 +103,10 @@ foreach ($projects as $project):
     echo $project["purchdate"];
 ?>" />
             <input type="text" readonly  name="purchprice" placeholder="purchprice" value="Purchase Price: <?php
-    echo $project["purchprice"];
+    echo '$'.$project["purchprice"];
 ?>" />
             <input type="text"  readonly  name="sellprice" placeholder="sellprice" value="Sell Price: <?php
-    echo $project["sellprice"];
+    echo '$'.$project["sellprice"];
 ?>" />
             <input type="text"  readonly  name="selldate" placeholder="selldate" value="Sell Date: <?php
     echo $project["selldate"];
