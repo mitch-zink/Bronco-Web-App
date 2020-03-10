@@ -23,11 +23,10 @@
   <li><a href="../phonebook/phonebook.php">phonebook</a></li>
   <li><a href="../about/purpose.php">purpose</a></li>
   <li><a href="../projectdetails/projectdetails.php">projectdetails</a></li>
+  <li><a href="../projectdetails/projectParts.php">projectparts</a></li>
   <li><a href="../projectdetails/reports.php">reports</a></li>
   <li><a href="../projectdetails/report2.php">report2</a></li>
-  <li><a href="../projectdetails/updateproject.php">updateproject</a></li>
   <li><a href="../projectdetails/updateprojectform.php">updateprojectform</a></li>
-  <li><a href="../parts/viewtransaction.php">viewtransaction</a></li>
   <li><a href="../projectdetails/workcompleted.php">workcompleted</a></li>
 </ul>
 </body>
