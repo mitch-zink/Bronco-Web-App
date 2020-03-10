@@ -69,10 +69,10 @@ $stmt2->closeCursor();
             <input type="text"   name="purchdate" placeholder="purchdate" value="<?php echo $project["purchdate"];?>" />
           
             <label for="projectid">Purchase Price</label>
-            <input type="text"   name="purchprice" placeholder="purchprice" value="<?php echo $project["purchprice"];?>" />
+            <input type="text"   name="purchprice" placeholder="purchprice" value="<?php echo $project["purchprice"];?>" pattern='^\d+(?:\.\d{0,2})$' title="Only numbers allowed - Include 2 decimal points" />
             
             <label for="projectid">Sell Price</label>
-            <input type="text"   name="sellprice" placeholder="sellprice" value="<?php echo $project["sellprice"];?>" />
+            <input type="text"   name="sellprice" placeholder="sellprice" value="<?php echo $project["sellprice"];?>" pattern='^\d+(?:\.\d{0,2})$' title="Only numbers allowed - Include 2 decimal points" />
           
             <label for="projectid">Sell Date</label>
            <input type="text"   name="selldate" placeholder="selldate" value="<?php echo $project["selldate"];?>" />

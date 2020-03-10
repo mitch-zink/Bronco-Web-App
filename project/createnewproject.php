@@ -53,8 +53,8 @@ include("../navbar.php")
             <input type="text" name="trim_pkg" placeholder="Trim Package (example Sport, Ranger, Explorer)" pattern="[a-zA-Z0-9 ']{2,}" maxlength="15" title="Only 15 letters & numbers allowed" />
             <input type="text" name="projectdesc" placeholder="Project Description" pattern="[a-zA-Z0-9 ']{2,}" maxlength="1000" title="Only letters & numbers allowed" />
             <input type="date" name="purchdate" placeholder="Purchase Date" />
-            <input type="text" name="purchprice" placeholder="Purchase Price" />
-            <input type="text" name="sellprice" placeholder="Sell Price" />
+            <input type="text" name="purchprice" placeholder="Purchase Price" pattern='^\d+(?:\.\d{0,2})$' title="Only numbers allowed - Include 2 decimal points" />
+            <input type="text" name="sellprice" placeholder="Sell Price" pattern='^\d+(?:\.\d{0,2})$' title="Only numbers allowed - Include 2 decimal points" />
             <input type="date" name="selldate" placeholder="Sell Date" />
             <input type="text" name="projectcomments" placeholder="Project Comments" pattern="[a-zA-Z0-9 ']{2,}" maxlength="1000" title="Only letters & numbers allowed" />
             <input type="submit" value="Submit" />
