@@ -1,33 +1,61 @@
 <!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="css.css">
-</head>
+
 <body>
-<ul>
-  <li style="float:left"><a href="#">Bronco</a>
-  <li><a href="../about/aboutus.php">aboutus</a></li>
-  <li><a href="../phonebook/addcontactform.php">addcontactform</a></li>
-  <li><a href="../parts/addpartsform.php">addpartsform</a></li>
-  <li><a href="../parts/addtransactionform.php">addtransactionform</a></li>
-  <li><a href="../project/createnewproject.php">createnewproject</a></li>
-  <li><a href="../start/createua.php">createua</a></li>
-  <li><a href="../projectdetails/files.php">files</a></li>
-  <li><a href="../about/faq.php">faq</a></li>
-  <li><a href="../home/home.php">home</a></li>
-  <li><a href="../home/homepage.php">homepage</a></li>
-  <li><a href="../start/login.php">login</a></li>
-  <li><a href="../start/logout.php">logout</a></li>
-  <li><a href="../project/openproject.php">openproject</a></li>
-  <li><a href="../parts/parts.php">parts</a></li>
-  <li><a href="../phonebook/phonebook.php">phonebook</a></li>
-  <li><a href="../about/purpose.php">purpose</a></li>
-  <li><a href="../projectdetails/projectdetails.php">projectdetails</a></li>
-  <li><a href="../projectdetails/projectParts.php">projectparts</a></li>
-  <li><a href="../projectdetails/reports.php">reports</a></li>
-  <li><a href="../projectdetails/report2.php">report2</a></li>
-  <li><a href="../projectdetails/updateprojectform.php">updateprojectform</a></li>
-  <li><a href="../projectdetails/workcompleted.php">workcompleted</a></li>
-</ul>
+
+<div class="navbar">
+
+  <div class="dropdown">
+    <button class="dropbtn">Bronco
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="..\home\homepage.php">Home</a>
+      <a href="..\about\aboutus.php">Our Story</a>
+      <a href="..\about\purpose.php">Our Purpose</a>
+      <a href="..\about\faq.php">FAQ</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Access
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="..\start\createua.php">Create User Account</a>
+      <a href="..\start\login.php">Log In</a>
+      <a href="..\start\logout.php">Log Out</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Phonebook
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="..\phonebook\phonebook.php">View Phonebook</a>
+      <a href="..\phonebook\addContactForm.php">Add a Contact</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Parts
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="..\parts\parts.php">View Parts Inventory</a>
+      <a href="..\parts\addPartsForm.php">Add a Part</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Project Management
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="..\projectdetails\projectdetails.php">Manage Projects</a>
+      <a href="..\project\createnewproject.php">Create a new project</a>
+      <a href="..\projectdetails\files.php">View Project Files</a>
+    </div>
+  </div> 
+  
+
+</div>
+
 </body>
 </html>
