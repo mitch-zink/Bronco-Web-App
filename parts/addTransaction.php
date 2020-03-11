@@ -8,7 +8,6 @@ $date = filter_input(INPUT_POST, "date");
 $quantity = filter_input(INPUT_POST, "quantity");
 $partid = filter_input(INPUT_POST, "partid");
 
-
 /*//validate
 if ($phoneid === null || $type === null || $price === null || 
 		$date === null || $quantity === null || $partid === null) { 
@@ -36,7 +35,7 @@ else { */
       $stmt->execute();
       $stmt->closeCursor();
 //}     
-include('viewTransaction.php');
+include('parts.php');
 
 
 

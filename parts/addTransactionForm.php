@@ -6,7 +6,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
 if(!isset($partid)) {
     $partid = filter_input(INPUT_POST, "partid", FILTER_VALIDATE_INT);
 }
-var_dump($partid);
+
 
 //Select parts 
 $sql = "SELECT * FROM parts ORDER BY partid";
@@ -21,7 +21,7 @@ $stmt2 = $pdo->prepare($sql2);
 $stmt2->execute();
 $contacts = $stmt2->fetchAll();
 $stmt2->closeCursor();
-
+//print_r($lastid);
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +35,7 @@ $stmt2->closeCursor();
    ?>
        <h1>Add Transaction</h1>
       <div class="form-style-6">
-      
+      <?php if(!isset($lastid)){ ?>
             <h1>Please Select a Part</h1>
             <form action= "addTransactionForm.php" method = "post">
 		    <select name = "partid">
@@ -49,7 +49,8 @@ $stmt2->closeCursor();
 		    <input type="submit" name="select" value="Select">
             </form><br>	
     </div>
-    <?php if(isset($partid)) { ?>
+    <?php } ?>
+    <?php if(isset($partid) || isset($lastid)) { ?>
     <div class="form-style-6">
         
             <h1>Enter Transaction Details</h1>
@@ -69,8 +70,9 @@ $stmt2->closeCursor();
             <option value="Seller">Seller</option>
             </select>
             <input type="text" name="price" placeholder="Price" />
-            <input type="text" name="date" placeholder="Date mm/dd/yyyy" />
+            <input type="text" name="date" placeholder="Date yyyy-mm-dd" />
             <input type="text" name="quantity" placeholder="Quantity" />
+            <?php if(isset($lastid)){ $partid = $lastid;} ?>
             <input type="hidden" name="partid" value="<?php echo $partid; ?>">
             <input type="submit" value="Enter Transaction" />
          </form>
