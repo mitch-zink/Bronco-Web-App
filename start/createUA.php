@@ -45,7 +45,7 @@ include("../navbar.php")
        <input type="text" name="userid"placeholder="userid" id="userid" readonly>
     </p>
     <p>
-        <input type="text"placeholder="username" name="username" id="username" pattern="[a-zA-Z0-9 ']{3,}" title="Only letters & numbers allowed characters">
+        <input type="text"placeholder="username" name="username" id="username" pattern="[a-zA-Z0-9- ']{3,}" title="Only letters & numbers allowed characters">
     </p>
     <p>
         <input type="text" name="password" placeholder="password"id="password" >
