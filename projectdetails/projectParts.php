@@ -27,7 +27,14 @@ $stmt1->execute();
 $parts = $stmt1->fetchAll();
 $stmt1->closeCursor();
 
-//var_dump($parts);
+$sql2 = 'SELECT projectname
+        FROM projects
+        WHERE projectid = :projectid';
+$stmt2 = $pdo->prepare($sql2);
+$stmt2->bindValue(':projectid', $projectid);
+$stmt2->execute();
+$projname = $stmt2->fetch();
+$stmt2->closeCursor();
 
 ?>
 <!DOCTYPE html>
@@ -55,7 +62,7 @@ include("../navbar.php")
       <br><br>
    <div class="form-style-6">
    <?php if(isset($projectid)) { ?>   
-          <h1>View Parts for Project ID: <?php echo $projectid; ?></h1>
+          <h1>View Parts for <?php echo $projname[0]; ?></h1>
             
             <table>
 		        <tr align="center">

@@ -33,8 +33,9 @@ else {*/
       $stmt->execute();
       $stmt->closeCursor();
 //}     
+  $lastid = $pdo->lastInsertId();
    
-include('parts.php');
+include('addTransactionForm.php');
 
 
 

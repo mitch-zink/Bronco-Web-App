@@ -3,8 +3,8 @@ require_once("../navbar.php");
 
 $action = filter_input(INPUT_POST, 'action');
 
-if($action == "details"){
-   header("Location: updateprojectform.php");
+if($action == 'viewproject'){
+   header("Location: ../project/openproject.php");
    exit;
 }else if($action == "projectparts"){
    header("Location: projectParts.php");
@@ -33,8 +33,8 @@ if($action == "details"){
          <form action="#" name="DDL" method="post">
             <select name="action">
                <option value="" disabled selected>Please choose from the following</option>
+               <option value='viewproject'>View Project Details</option>
                <option value='projectparts'>Manage Project Parts</option>
-               <option value='details'>Update Project Details</option>
                <option value='workcomplete'>Work Completed</option>
                <option value='report1'>Project Report</option>
                <option value='report2'>Part Family Report</option>

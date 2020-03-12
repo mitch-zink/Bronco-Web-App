@@ -34,10 +34,9 @@ else { */
         $stmt->bindValue(':date', $date);
         $stmt->bindValue(':price', $price);
         $stmt->bindValue(':quantity', $quantity);
-        $stmt->bindValue(':transid', $transid);
-      
+        $stmt->bindValue(':transid', $transid); 
         $stmt->execute();
         $stmt->closeCursor();
 //}
-    include('viewTransaction.php');
+    include('parts.php');
 ?>

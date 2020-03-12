@@ -14,10 +14,11 @@ $stmt->execute();
 $tran = $stmt->fetch();
 $stmt->closeCursor();
 
-$sql1 = "SELECT * FROM parts ORDER BY partid";
+$sql1 = "SELECT itemname FROM parts WHERE partid = :partid";
 $stmt1 = $pdo->prepare($sql1);
+$stmt1->bindValue(":partid", $tran["partid"]);
 $stmt1->execute();
-$parts = $stmt1->fetchAll();
+$part = $stmt1->fetch();
 $stmt1->closeCursor();
 
 //Select phonebook info
@@ -26,7 +27,7 @@ $stmt2 = $pdo->prepare($sql2);
 $stmt2->execute();
 $contacts = $stmt2->fetchAll();
 $stmt2->closeCursor();
-
+print_r($contacts);
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +41,8 @@ include("../navbar.php")
 ?>
       <div class="form-style-6">
       
-        <h1>Modify Transaction</h1>
+        <h1>Modify Transaction For: <?php echo $part['itemname']; ?></h1>
             <form action="updateTransaction.php" method="post">
-            <select name = "partid">
-            <option value="" disabled selected>Select a Part</option>
-                <?php foreach($parts as $part) : ?>
-			    <option value = "<?php echo $part['partid']; ?>">
-			    <?php echo $part['itemname']; ?>
-			    </option>
-		    <?php endforeach ?>
-		    </select>
             <select name = "phoneid">
             <option value="" disabled selected>Select Contact</option>
                 <?php foreach($contacts as $contact) : ?>
@@ -66,6 +59,7 @@ include("../navbar.php")
             <input type="text" name="date" value="<?php echo $tran['date']; ?>" />
             <input type="text" name="quantity" value="<?php echo $tran['quantity']; ?>" />
             <input type="hidden" name="transid" value="<?php echo $transid; ?>"/>
+            <input type="hidden" name="partid" value="<?php echo $tran['partid']; ?>"/>
             <input type="submit" value="Update Transaction" />
          </form>
         </div>

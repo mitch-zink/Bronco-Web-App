@@ -16,35 +16,6 @@ $stmt->execute();
 $trans = $stmt->fetchAll();
 $stmt->closeCursor();
 
-/*$partname = '';
-foreach($parts as $part) {
-   $partname = $part['itemname']
-}
-//Select transactions
-$sql1 = "SELECT * FROM transaction WHERE partid = :partid ORDER BY partid";
-$stmt1 = $pdo->prepare($sql1);
-$stmt1->bindValue(':partid', $partid);
-$stmt1->execute();
-$trans = $stmt1->fetchAll();
-$stmt1->closeCursor();
-
-//Store transaction ID for use
-$transid = '';
-foreach($trans as $tran){
-    $transid = $tran['transid'];
-}
-var_dump($transid);
-
-//Select phonebook contact info from matching transaction
-$sql2 = "SELECT phonebook.phoneid, firstname, lastname, business, transaction.phoneid FROM phonebook, transaction
-where phonebook.phoneid = transaction.phoneid";
-$stmt2 = $pdo->prepare($sql2);
-$stmt2->bindValue(':transid', $transid);
-$stmt2->execute();
-$contacts = $stmt2->fetchAll();
-$stmt2->closeCursor();
-
-var_dump($contacts); */
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +54,7 @@ include("../navbar.php")
                     <input type="hidden" name="transid" value="<?php echo $tran['transid']; ?>">
                     <input type="submit" name="select" value="Edit Transaction Information">
                     </form>
-                    <form action="viewContact.php" method="post">
+                    <form action="../phonebook/phonebook.php" method="post">
                     <input type="hidden" name="phoneid" value="<?php echo $tran['phoneid']; ?>">
                     <input type="submit" name="select" value="View Contact">
                    </form></td>
