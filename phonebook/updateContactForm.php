@@ -27,11 +27,11 @@ include("../navbar.php")
         <h1>Update Contact</h1>
           <form action="updateContact.php" method="post">
             <input type="text" name="fname" placeholder="First Name" value="<?php echo $contact['firstname'] ?>" pattern="[a-zA-Z]{2,}" title="Enter minimum 2 letters" required>
-            <input type="text" name="lname" placeholder="Last Name" value="<?php echo $contact['lastname'] ?>" pattern="[a-zA-Z]{2,}" title="Enter minimum 2 letters">
-            <input type="text" name="business" placeholder="Business Name" value="<?php echo $contact['business'] ?>" pattern="[a-zA-Z]{2,}" title="Enter minimum 2 letters">
-            <input type="text" name="addr1" placeholder="Address Line 1" value="<?php echo $contact['addr1'] ?>" >
-            <input type="text" name="addr2" placeholder="Address Line 2" value="<?php echo $contact['addr2'] ?>" >
-            <input type="text" name="city" placeholder="City" value="<?php echo $contact['city'] ?>" pattern="[a-zA-Z]{2,}" title="Enter minimum 2 letters">
+            <input type="text" name="lname" placeholder="Last Name" value="<?php echo $contact['lastname'] ?>" pattern="[a-zA-Z ']{2,}" title="Enter minimum 2 letters">
+            <input type="text" name="business" placeholder="Business Name" value="<?php echo $contact['business'] ?>" pattern="[a-zA-Z0-9 ']{2,}" title="Enter minimum 2 letters or numbers">
+            <input type="text" name="addr1" placeholder="Address Line 1" value="<?php echo $contact['addr1'] ?>"  pattern="[a-zA-Z0-9 ']{2,}" title="Enter minimum 2 letters or numbers">
+            <input type="text" name="addr2" placeholder="Address Line 2" value="<?php echo $contact['addr2'] ?>"  pattern="[a-zA-Z0-9 ']{2,}" title="Enter minimum 2 letters or numbers">
+            <input type="text" name="city" placeholder="City" value="<?php echo $contact['city'] ?>" pattern="[a-zA-Z ']{2,}" title="Enter minimum 2 letters">
             <input type="text" name="state" placeholder="State" value="<?php echo $contact['state'] ?>" pattern="[A-Z]{2}" title="Enter 2 Upper Case Char State Abrev">
             <input type="text" name="zip" placeholder="Zip Code" value="<?php echo $contact['zip'] ?>" pattern="[0-9]{5}" title="Enter 5 digits">
             <input type="text" name="email" placeholder="Email Address" value="<?php echo $contact['emailaddress'] ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Not a proper email address">

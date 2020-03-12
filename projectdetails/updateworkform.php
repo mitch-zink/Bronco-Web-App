@@ -26,10 +26,10 @@
       <h1>Enter Work Information</h1>
         <?php foreach($work as $w){ ?>
         <form action="updatework.php" method="post">
-          <input type="text" name="workname" placeholder="Work Name" value="<?php echo $w['workname']; ?>"/>
-          <input type="text" name="workdate" placeholder="Date yyyy/mm/dd" value="<?php echo $w['dateperformed']; ?>">
-          <textarea type="text" name="workdesc" placeholder="Work Description" ><?php echo $w['workdesc']; ?></textarea>
-          <textarea type="text" name="workcomments" placeholder="Comments"><?php echo $w['workcomments']; ?></textarea>
+          <input type="text" name="workname" placeholder="Work Name" value="<?php echo $w['workname']; ?>" pattern="[a-zA-Z0-9 ']{2,}" maxlength="15" title="Only 15 letters & numbers allowed" />
+          <input type="date" name="workdate" placeholder="Date yyyy/mm/dd" value="<?php echo $w['dateperformed']; ?>">
+          <textarea type="text" name="workdesc" placeholder="Work Description" value="<?php echo $w['workdesc']; ?>" pattern="[a-zA-Z0-9 ']{2,}"maxlength="1000" title="Only 15 letters & numbers allowed"></textarea>
+          <textarea type="text" name="workcomments" placeholder="Comments" value="<?php echo $w['workcomments']; ?>" pattern="[a-zA-Z0-9 ']{2,}" maxlength="1000" title="Only 15 letters & numbers allowed"></textarea>
           <input type="hidden" name="projid" value="<?php echo $projid; ?>">
           <input type="hidden" name="workid" value="<?php echo $workid; ?>">
           <input type="submit" value="Update Work"/>
