@@ -1,74 +1,5 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: gray;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style>
-</head>
 <body>
 
 <div class="navbar">
@@ -78,10 +9,10 @@ body {
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="home\homepage.php">Home</a>
-      <a href="about\aboutus.php">Our Story</a>
-      <a href="about\purpose.php">Our Purpose</a>
-      <a href="about\faq.php">FAQ</a>
+      <a href="..\home\homepage.php">Home</a>
+      <a href="..\about\aboutus.php">Our Story</a>
+      <a href="..\about\purpose.php">Our Purpose</a>
+      <a href="..\about\faq.php">FAQ</a>
     </div>
   </div> 
   <div class="dropdown">
@@ -89,9 +20,9 @@ body {
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="start\createua.php">Create User Account</a>
-      <a href="start\login.php">Log In</a>
-      <a href="start\logout.php">Log Out</a>
+      <a href="..\start\createua.php">Create User Account</a>
+      <a href="..\start\login.php">Log In</a>
+      <a href="..\start\logout.php">Log Out</a>
     </div>
   </div> 
   <div class="dropdown">
@@ -99,8 +30,8 @@ body {
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="phonebook\phonebook.php">View Phonebook</a>
-      <a href="phonebook\addContactForm.php">Add a Contact</a>
+      <a href="..\phonebook\phonebook.php">View Phonebook</a>
+      <a href="..\phonebook\addContactForm.php">Add a Contact</a>
     </div>
   </div>
   <div class="dropdown">
@@ -108,8 +39,8 @@ body {
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="parts\parts.php">View Parts Inventory</a>
-      <a href="parts\addPartsForm.php">Add a Part</a>
+      <a href="..\parts\parts.php">View Parts Inventory</a>
+      <a href="..\parts\addPartsForm.php">Add a Part</a>
     </div>
   </div> 
   <div class="dropdown">
@@ -117,9 +48,9 @@ body {
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="projectdetails\projectdetails.php">Manage Projects</a>
-      <a href="project\createnewproject.php">Create a new project</a>
-      <a href="projectdetails\files.php">View Project Files</a>
+      <a href="..\projectdetails\projectdetails.php">Manage Projects</a>
+      <a href="..\project\createnewproject.php">Create a new project</a>
+      <a href="..\projectdetails\files.php">View Project Files</a>
     </div>
   </div> 
   
