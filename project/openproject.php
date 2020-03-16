@@ -120,9 +120,9 @@ endforeach;
 
          </form>
          <?php if($action == "Submit"){ ?>
-         <form action="../projectdetails/workcompleted.php" method="post">
+         <form action="../projectdetails/updateprojectform.php" method="post">
             <input type="hidden" name="projid" value="<?php echo $project["projectid"]; ?>">
-            <input type="submit" value="View Work Completed">
+            <input type="submit" value="Update Project Details">
          </form>
          <?php } ?>
       </div>

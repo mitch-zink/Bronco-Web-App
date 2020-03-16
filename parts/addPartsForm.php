@@ -25,8 +25,13 @@ include("../navbar.php")
                         <option value="interior">Interior</option>
                         <option value="suspension">Suspension</option>      
                     </select>
+<<<<<<< HEAD
+                    <input type="text" name="quantity" placeholder="Quantity On Hand" pattern="[0-9]{1,}" maxlength="4" title="Only 4 numbers allowed" />
+                    <textarea type="text" name="comments" placeholder="Comments" pattern="[a-zA-Z0-9 ']{2,}" maxlength="1000" title="Only letters & numbers allowed" ></textarea>
+=======
                     <input type="text" name="quantity" placeholder="Quantity On Hand" pattern="[0-9]{1,}" maxlength="4" title="Max 4 numbers allowed"  />
                     <textarea type="text" name="comments" placeholder="Comments" pattern="[a-zA-Z0-9.,- ']{2,}" maxlength="1000" title="Only letters & numbers allowed"  ></textarea>
+>>>>>>> cd6333c1c5a6a72ac1576b46e39fec9b9b6cb710
                     <input type="submit" value="Add Parts" />
                 </form>
                               

@@ -2,16 +2,7 @@
 require_once("../dbconnect.php");
 require_once("../navbar.php");
 
-$action = filter_input(INPUT_POST, "action");
 $projid = filter_input(INPUT_POST, "projid");
-
-// Runs a query based on the selected projectid from the DDL
-$queryProjects = 'SELECT * FROM projects
-                  ORDER BY projectname asc';
-$stmt = $db->prepare($queryProjects);
-$stmt->execute();
-$projects = $stmt->fetchAll();
-$stmt->closeCursor();
 
 // Runs a query to for selected project
 $queryProject = "SELECT * FROM projects
@@ -30,21 +21,6 @@ $stmt2->closeCursor();
       <link rel="stylesheet" type="text/css" href="../css.css">
    </head>
    <body>
-      <!-- DDL -->
-      <?php if($action != "Submit"){ ?>
-      <div class="form-style-6">
-         <h1>Select a project to continue</h1>
-         <form action="#" name="DDL" method="post">
-            <select name="projid">
-               <option></option>
-               <?php foreach($projects as $project){ ?>
-                <option value="<?php echo $project['projectid']; ?>"><?php echo $project['projectname']; ?></option>
-               <?php } ?>
-            </select>
-            <input type="submit" name="action" value="Submit">
-         </form>
-      </div>
-      <?php }else{ ?>
       <div class="form-style-6">
          <h1><?php echo $selectedproject[0]["projectname"]; ?></h1>
          <form action="updateproject.php" method="post">
@@ -87,6 +63,5 @@ $stmt2->closeCursor();
 
          </form>
       </div>
-      <?php } ?>
    </body>
 </html>

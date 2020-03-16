@@ -57,7 +57,7 @@ $stmt->closeCursor();
                     </tr> 
                     <?php } ?>   
                     </table> 
-                    <input type="button" onclick="location.href='addContactForm.php';" value="Add New Contact"/>     
+ 
       </div>
       
 

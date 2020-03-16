@@ -8,13 +8,6 @@ include("../navbar.php")
 <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
 <body>
-<div class="dropdown">
-  <button class="dropbtn">About Us</button>
-  <div class="dropdown-content">
-    <a onClick="location.href='../about/purpose.php'">Purpose</a>
-    <a onClick="location.href='../about/faq.php'">FAQ</a>
-  </div>
-</div>
 <?php 
 echo "<h3>About Us</h3>";
 echo "<hr>";
@@ -28,6 +21,6 @@ echo "<img src=1974_Bronco.jpg width=300 height=200>";
 echo "";
 echo ("<pre></pre>");
 ?>
-<input type="button" onClick="location.href='../home/home.php'" name="submit1" value="Home"; 
+<input type="button" onClick="location.href='../home/home.php'" name="submit1" value="Home";
 </body>
 </html>
