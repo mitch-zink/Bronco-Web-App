@@ -10,7 +10,6 @@ $password = '';
 
 try {
     $db = new PDO($dsn,$username,$password);
-    echo "connected";
 }
 catch (PDOException $e) {
     $error_message = $e->getMessage();

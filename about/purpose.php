@@ -17,6 +17,5 @@ It also provides a convenient location to store files, such as user manuals, war
 pictures & videos. Hover over “Start Here” and click on “Create User Account” to begin.
 </h3></pre>";
 ?>
-<input type="button" onClick="location.href='../home/home.php'" name="submit1" value="Home"; 
 </body>
 </html>

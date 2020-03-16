@@ -8,9 +8,8 @@ include("../navbar.php")
     </head>
     <body>
 
-        <h1>Add a New Contact</h1>
         <div class="form-style-6">
-            <h1>Enter Contact Information</h1>
+            <h1>Enter New Contact Information</h1>
             <form action="addContact.php" method="post">
                     <input type="text" name="fname" placeholder="First Name" pattern="[a-zA-Z ]{2,}" title="Only letters allowed" required/>
                     <input type="text" name="lname" placeholder="Last Name" pattern="[a-zA-Z- ']{2,}" title="Only letters allowed" />

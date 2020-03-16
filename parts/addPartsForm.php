@@ -8,7 +8,6 @@
    <?php
 include("../navbar.php")
 ?>
-        <h1>Add a New Part</h1>
         <div class="form-style-6">
             <h1>Enter Parts Information</h1>
                 <form action="addParts.php" method="post">

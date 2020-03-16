@@ -19,8 +19,4 @@ Answer: Yes, you can delete a project at any time you no longer need it.
 Answer: Yes, other data is populated in the tables for this purpose.
 </h3></pre>";
 ?>
-<html>
-    <body>
-    <input type="button" onClick="location.href='../home/home.php'" name="submit1" value="Home"; 
-    </body>
-</html>
+

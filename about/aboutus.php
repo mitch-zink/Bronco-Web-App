@@ -21,6 +21,5 @@ echo "<img src=1974_Bronco.jpg width=300 height=200>";
 echo "";
 echo ("<pre></pre>");
 ?>
-<input type="button" onClick="location.href='../home/home.php'" name="submit1" value="Home";
 </body>
 </html>

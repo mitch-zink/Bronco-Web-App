@@ -50,7 +50,7 @@ $stmt1->closeCursor();
    <?php if(isset($partfamily)) { ?>   
           <h1>View Parts</h1>
             <table>
-		        <tr align="center">
+		        <tr>
               <th>Part ID</th>
                 <th>Part Name</th>
                 <th>Item Description</th>
@@ -58,7 +58,7 @@ $stmt1->closeCursor();
                 <th>Quantity</th>
                 <th>Comments</th>
                 <th>Options</th>
-                </tr>
+               </tr>
 		
                 <?php foreach($parts as $part) {?> 
                     <tr>
@@ -80,7 +80,7 @@ $stmt1->closeCursor();
                     </tr>
                 <?php }  ?>
             </table>
-            <input type="button" onclick="location.href='addPartsForm.php';" value="Add New Part"/>
+
 	      </div>
    <?php } ?>
       <script src="js/scripts.js"></script>
