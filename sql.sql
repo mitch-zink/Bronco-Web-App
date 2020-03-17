@@ -124,8 +124,8 @@ VALUES (1, 1, 1,'2020-03-02','150.00', 'buy', 2);
 INSERT INTO projects (projectid, projectname, make, model, trim_pkg, purchprice, purchdate, sellprice, selldate, projectcomments) 
 VALUES (1,'77 Bronco offroad','Ford','Bronco','SLE','67200.00','2019-03-14',NULL,NULL, 'Overall in good condition. Needs new bumper and seats.');
 
-INSERT INTO project_parts (partid, projectid)
-VALUES (1, 1);
+INSERT INTO project_parts (partid, projectid, quantity)
+VALUES (1, 1, 1);
 
 INSERT INTO workcompleted (workid, projectid, workname, workdesc, workcomments, dateperformed) 
 VALUES (1, 1,'Oil change','5qt 5W-20 ','Completed','2019-03-14'); 
