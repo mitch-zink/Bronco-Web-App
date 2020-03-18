@@ -13,18 +13,22 @@ WHERE partid =:partid';
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':partid', $partid);
 $stmt->execute();
-$count = $stmt->fetchColumn();
+$count = $stmt->fetch();
 $stmt->closeCursor();
 
+$sql1 = 'SELECT quantity FROM project_parts 
+WHERE partid =:partid';
+$stmt1 = $pdo->prepare($sql1);
+$stmt1->bindValue(':partid', $partid);
+$stmt1->execute();
+$ppcount = $stmt1->fetch();
+$stmt1->closeCursor();
 //var_dump($count);
+
 $q = '';
-if($pquantity > $count){
-    $error = "Error: Invalid inventory. Quantity exceeds inventory quantity on hand.";
-    echo $error;
-}
-//***Bug - Need to figure out how to adjust quantity counts for parts and project_parts properly when updated. Ryan 3/4
-else{
-$q = $count - $pquantity;
+$q = $ppcount['quantity'] - $pquantity;
+$q += $count['quantity'];
+var_dump($q);
 
 $sql2 = 'UPDATE parts
         SET quantity =:q WHERE partid =:partid';
@@ -46,6 +50,6 @@ $stmt1->bindValue(':projectid', $projectid);
 
 $stmt1->execute();
 $stmt1->closeCursor();    
-}
+
 include('projectparts.php');
 ?>
