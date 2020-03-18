@@ -35,7 +35,7 @@ else { */
       $stmt->execute();
       $stmt->closeCursor();
 //}     
-include('parts.php');
+include('viewTransaction.php');
 
 
 

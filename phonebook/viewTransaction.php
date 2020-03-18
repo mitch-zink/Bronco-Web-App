@@ -3,15 +3,15 @@
 //Connects to the MySQL database using the PDO extension
 $pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
 
-if(!isset($partid)) {
-	$partid = filter_input(INPUT_POST, 'partid', FILTER_VALIDATE_INT);
+if(!isset($pbid)) {
+	$pbid = filter_input(INPUT_POST, 'pbid', FILTER_VALIDATE_INT);
 }
 
 //Select parts 
 $sql = "SELECT phonebook.phoneid, firstname, lastname, business, transid, transactions.phoneid, transtype, date, price, transactions.quantity, parts.partid, itemname 
-         FROM phonebook, transactions, parts where phonebook.phoneid = transactions.phoneid AND transactions.partid = parts.partid AND transactions.partid = :partid";
+         FROM phonebook, transactions, parts where phonebook.phoneid = transactions.phoneid AND transactions.partid = parts.partid AND transactions.phoneid = :pbid";
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':partid', $partid);
+$stmt->bindValue(':pbid', $pbid);
 $stmt->execute();
 $trans = $stmt->fetchAll();
 $stmt->closeCursor();
@@ -54,11 +54,12 @@ include("../navbar.php")
                     <input type="hidden" name="transid" value="<?php echo $tran['transid']; ?>">
                     <input type="submit" name="select" value="Edit Transaction Information">
                     </form>
-                    <form action="transContact.php" method="post">
-                    <input type="hidden" name="phoneid" value="<?php echo $tran['phoneid']; ?>">
-                    <input type="submit" name="select" value="View Contact">
+                    <form action="transPart.php" method="post">
+                    <input type="hidden" name="partid" value="<?php echo $tran['partid']; ?>">
+                    <input type="submit" name="select" value="View Part">
                    </form></td>
-                   </tr><?php } ?>
+                    </tr>
+                    <?php } ?>
                     
                     </table> 
                     <input type="button" onclick="location.href='addTransactionForm.php';" value="Add New Transaction"/>     
@@ -66,4 +67,3 @@ include("../navbar.php")
       <script src="js/scripts.js"></script>
    </body>
 </html>
-

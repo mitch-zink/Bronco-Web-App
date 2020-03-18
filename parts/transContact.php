@@ -2,10 +2,14 @@
 //Connects to the MySQL database using the PDO extension
 require("../dbconnect.php");
 
+if(!isset($phoneid)) {
+	$phoneid = filter_input(INPUT_POST, 'phoneid', FILTER_VALIDATE_INT);
+}
 
 //Select Contact
-$sql = "SELECT * FROM phonebook ORDER BY phoneid";
+$sql = "SELECT * FROM phonebook WHERE phoneid = :phoneid";
 $stmt = $db->prepare($sql);
+$stmt->bindValue(':phoneid', $phoneid);
 $stmt->execute();
 $phones = $stmt->fetchAll();
 $stmt->closeCursor();
@@ -20,7 +24,7 @@ $stmt->closeCursor();
    <body>
    <?php include("../navbar.php"); ?>
       <div class="form-style-6">
-          <h1>View Contact</h1>
+          <h1>View Phonebook Contact</h1>
             <table>
 		        <tr align="center">
                 <th>Phone ID</th>
@@ -50,18 +54,11 @@ $stmt->closeCursor();
                     <td><?php echo $phone['emailaddress']; ?></td>
                     <td><?php echo $phone['phonenumber']; ?></td>
                        
-                    <td><form action="updateContactForm.php" method="post">
-                    <input type="hidden" name="phoneid" value="<?php echo $phone['phoneid']; ?>">
-                    <input type="submit" name="select" value="Modify Contact">
-                    </form>
-                    <td><form action="viewTransaction.php" method="post">
-                    <input type="hidden" name="pbid" value="<?php echo $phone['phoneid']; ?>">
-                    <input type="submit" name="select" value="View Transactions">
-                    </form>
                     </tr> 
                     <?php } ?>   
                     </table> 
-                    <input type="button" onclick="location.href='addContactform.php';" value="Add New Contact"/>
+                    <input type="button" onclick="location.href='../phonebook/phonebook.php';" value="View Phonebook"/>    
+
  
       </div>
       
@@ -69,4 +66,3 @@ $stmt->closeCursor();
       <script src="js/scripts.js"></script>
    </body>
 </html>
-
