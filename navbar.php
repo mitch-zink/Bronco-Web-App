@@ -53,7 +53,7 @@ body {
 
 .dropdown-content ul li a {
   float: none;
-  color: white;
+  color: black;
   padding: 1px 16px;
   text-decoration: none;
   display: block;
