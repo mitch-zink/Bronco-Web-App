@@ -13,10 +13,11 @@ body {
   background-color: #333;
 }
 
-.navbar a {
+.navbar a ul {
   float: left;
+  list-style-type: none;
   font-size: 16px;
-  color: white;
+  background-color: grey;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -27,8 +28,9 @@ body {
   overflow: hidden;
 }
 
+
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 16px;
   border: none;
   outline: none;
   color: white;
@@ -38,20 +40,11 @@ body {
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover .dropdown:hover .dropbtn {
   background-color: gray;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content ul li a {
+.dropdown-content li a {
   float: none;
   color: black;
   padding: 1px 16px;
@@ -60,8 +53,17 @@ body {
   text-align: left;
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #grey;
 }
 
 .dropdown:hover .dropdown-content {
@@ -74,20 +76,21 @@ body {
 <div class="navbar">
 <ul>
   <div class="dropdown">
-  <li><a>
-    <button class="dropbtn">Bronco
-      <i class="fa fa-caret-down"></i>
-    </button></a>
-    <div href="#" class="dropdown-content">
-  <ul>
+    <li><a>
+      <button class="dropbtn">Bronco
+        <i class="fa fa-caret-down"></i>
+        </button></a>
+        <div href="#" class="dropdown-content">
+        <ul>
       <li><a href="..\home\homepage.php">Home</a></li>
       <li><a href="..\about\aboutus.php">Our Story</a></li>
       <li><a href="..\about\purpose.php">Our Purpose</a></li>
       <li><a href="..\about\faq.php">FAQ</a></li>
-  </ul>
-    </div>
-  </div> 
-</li>
+      </ul>
+      </div>
+      </div>
+      </li>
+
   <div class="dropdown">
   <li><a>
     <button class="dropbtn">Access

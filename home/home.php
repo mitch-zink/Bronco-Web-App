@@ -12,9 +12,9 @@ include("../navbar.php")
 ?>
 <h3> This is the basic home page for non admin users. </h3>
 <?php 
-echo "<h3>Home</h3>";
+echo "<h1>Home</h1>";
 echo "<hr>";
-echo "<h2>1966 – 1977 Early Ford Bronco Expense & Project Tracker for DIY Vehicle Restoration</h2>";
+echo "<h3><pre>1966 – 1977 Early Ford Bronco Expense & Project Tracker for DIY Vehicle Restoration</pre></h3>";
 ?>
     </body>
 </html>
