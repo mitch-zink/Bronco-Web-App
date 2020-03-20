@@ -34,6 +34,7 @@ $stmt->closeCursor();
                 <th>Zip</th>
                 <th>Email Address</th>
                 <th>Phone Number</th>
+                <th>Options</th>
                 </tr>
 		
                 <?php foreach($phones as $phone) {?>
@@ -54,7 +55,7 @@ $stmt->closeCursor();
                     <input type="hidden" name="phoneid" value="<?php echo $phone['phoneid']; ?>">
                     <input type="submit" name="select" value="Modify Contact">
                     </form>
-                    <td><form action="viewTransaction.php" method="post">
+                    <form action="viewTransaction.php" method="post">
                     <input type="hidden" name="pbid" value="<?php echo $phone['phoneid']; ?>">
                     <input type="submit" name="select" value="View Transactions">
                     </form>
