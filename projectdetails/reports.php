@@ -44,8 +44,6 @@ foreach($parts as $part){
 </head>
 <body>
 
-<h1 align="center">View Reports</h1>
-
 <?php if($action != "View Report") { ?>
 <div class="form-style-6">
   <form method="post">

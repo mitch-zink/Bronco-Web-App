@@ -38,7 +38,6 @@ $stmt3->closeCursor();
 <link rel="stylesheet" type="text/css" href="../css.css">
 </head>
 <body>
-<h1 align="center">Work Completed</h1>
 
 <?php if($action != "Submit"){ ?>
 <div class="form-style-6">

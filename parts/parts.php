@@ -7,7 +7,6 @@ if(!isset($partfamily)) {
    $partfamily = filter_input(INPUT_POST, "partfamily");
 }
 
-
 //Select parts 
 $sql1 = "SELECT * FROM parts WHERE partfamily =:partfamily ORDER BY partid";
 $stmt1 = $pdo->prepare($sql1);
@@ -46,8 +45,8 @@ $stmt1->closeCursor();
       </form>
    </div>
    <br><br>
-   <div class="form-style-6">
    <?php if(isset($partfamily)) { ?>   
+      <div class="form-style-6">
           <h1>View Parts</h1>
             <table>
 		        <tr>

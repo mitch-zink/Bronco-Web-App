@@ -64,13 +64,13 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
          </form>
       </div>
       <script src="js/scripts.js"></script>
-      <div class="form-style-6">
 
 
 
          <?php
 foreach ($projects as $project):
 ?>
+<div class="form-style-6">
          <h1><?php
     echo $project["projectname"];
 ?></h1>
