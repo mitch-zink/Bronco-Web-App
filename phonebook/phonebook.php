@@ -19,10 +19,10 @@ $stmt->closeCursor();
    </head>
    <body>
    <?php include("../navbar.php"); ?>
-      <div class="form-style-6">
-          <h1>View Contact</h1>
-            <table>
-		        <tr align="center">
+      <div class="form-style-6" style="max-width:95%">
+          <h1>View Contacts</h1>
+            <table align="center">
+		        <tr>
                 <th>Phone ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -67,7 +67,7 @@ $stmt->closeCursor();
       </div>
       
 
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>
 

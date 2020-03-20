@@ -63,7 +63,7 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
          </form>
          </form>
       </div>
-      <script src="js/scripts.js"></script>
+      
 
 
 

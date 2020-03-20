@@ -30,6 +30,6 @@ include("../navbar.php")
                 </form>
                               
       </div>
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>

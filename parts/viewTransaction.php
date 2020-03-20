@@ -63,7 +63,7 @@ include("../navbar.php")
                     </table> 
                     <input type="button" onclick="location.href='addTransactionForm.php';" value="Add New Transaction"/>     
       </div>
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>
 

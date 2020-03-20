@@ -42,6 +42,6 @@ include("../navbar.php")
         </div>
         
 
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>

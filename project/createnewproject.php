@@ -60,6 +60,6 @@ include("../navbar.php")
             <input type="submit" value="Submit" />
          </form>
       </div>
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>

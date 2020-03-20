@@ -79,6 +79,6 @@ $stmt2->closeCursor();
                 <?php } ?>
       </div>
       
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>

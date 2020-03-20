@@ -37,15 +37,15 @@ include("../navbar.php")
             <input type="text" name="itemname" value="<?php echo $part['itemname']; ?>" />
             <input type="text" name="itemdesc" value="<?php echo $part['itemdesc']; ?>" />
             <select id="partfamily" name="partfamily">
-               <option value="body">Body</option>
-               <option value="brakes">Brakes</option>
-               <option value="coolingsystem">Cooling System</option>
-               <option value="drivetrain">Drive Train</option>
-               <option value="electrical">Electrical</option>
-               <option value="engine">Engine</option>
-               <option value="exhaust">Exhaust</option>
-               <option value="interior">Interior</option>
-               <option value="suspension">Suspension</option>      
+               <option value="body" <?php echo ($part['partfamily'] == 'body' ? 'selected' : '') ?>>Body</option>
+               <option value="brakes" <?php echo ($part['partfamily'] == 'brakes' ? 'selected' : '') ?>>Brakes</option>
+               <option value="coolingsystem" <?php echo ($part['partfamily'] == 'coolingsystem' ? 'selected' : '') ?>>Cooling System</option>
+               <option value="drivetrain" <?php echo ($part['partfamily'] == 'drivetrain' ? 'selected' : '') ?>>Drive Train</option>
+               <option value="electrical" <?php echo ($part['partfamily'] == 'electrical' ? 'selected' : '') ?>>Electrical</option>
+               <option value="engine" <?php echo ($part['partfamily'] == 'engine' ? 'selected' : '') ?>>Engine</option>
+               <option value="exhaust" <?php echo ($part['partfamily'] == 'exhaust' ? 'selected' : '') ?>>Exhaust</option>
+               <option value="interior" <?php echo ($part['partfamily'] == 'interior' ? 'selected' : '') ?>>Interior</option>
+               <option value="suspension" <?php echo ($part['partfamily'] == 'suspension' ? 'selected' : '') ?>>Suspension</option>      
             </select>
             <input type="text" name="quantity" value="<?php echo $part['quantity']; ?>" />
             <input type="text" name="comments" value="<?php echo $part['comments']; ?>" />
@@ -55,6 +55,6 @@ include("../navbar.php")
          
       </div>
 
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>

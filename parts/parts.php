@@ -46,9 +46,9 @@ $stmt1->closeCursor();
    </div>
    <br><br>
    <?php if(isset($partfamily)) { ?>   
-      <div class="form-style-6">
+      <div class="form-style-6" style="max-width:80%">
           <h1>View Parts</h1>
-            <table>
+            <table align="center">
 		        <tr>
               <th>Part ID</th>
                 <th>Part Name</th>
@@ -82,6 +82,6 @@ $stmt1->closeCursor();
 
 	      </div>
    <?php } ?>
-      <script src="js/scripts.js"></script>
+      
    </body>
 </html>

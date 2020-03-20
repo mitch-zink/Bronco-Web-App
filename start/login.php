@@ -40,7 +40,7 @@ include("../navbar.php")
                   <input type="text" name="username"placeholder="username" id="username" required>  
                </p>
                <p>
-                  <input type="text" type="password" name="password" placeholder="password" id="password">
+                  <input type="password" name="password" placeholder="password" id="password">
                </p>
                <input type="submit" value="Submit">
             </form>
