@@ -33,8 +33,6 @@ if($action == "View Family Report"){
 </head>
 <body>
 
-<h1 align="center">View Reports</h1>
-
 <?php if($action != "View Family Report") { ?>
 <div class="form-style-6">
   <form method="post">

@@ -9,7 +9,7 @@
 include("../navbar.php")
 ?>
 <?php 
-echo "<h3>Purpose</h3>";
+echo "<h1>Purpose</h1>";
 echo "<hr>";
 echo "<h3><pre>This website is designed for the 1966 – 1977 Early Ford Bronco enthusiast to track vehicle 
 expenses & maintenance from the initial purchase to the bittersweet day when ownership changes hands. 
