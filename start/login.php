@@ -29,7 +29,6 @@
    </head>
    <body>
    <?php
-include("../navbar.php")
 ?>
       <!-- Form -->
       <div class="form-style-6">
