@@ -9,8 +9,6 @@
 <?php
 include("../navbar.php")
 ?>
-
-<h1> This is the home page for admin users. </h1>
 <?php 
 echo "<h1>Home</h1>";
 echo "<hr>";
