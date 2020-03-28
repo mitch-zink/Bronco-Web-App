@@ -62,7 +62,7 @@ include("../navbar.php")
                     <?php } ?>
                     
                     </table> 
-                    <input type="button" onclick="location.href='addTransactionForm.php';" value="Add New Transaction"/>     
+                    <input type="button" onclick="location.href='../parts/addTransactionForm.php';" value="Add New Transaction"/>     
       </div>
       
    </body>
