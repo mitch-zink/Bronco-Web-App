@@ -27,7 +27,7 @@ $stmt2 = $pdo->prepare($sql2);
 $stmt2->execute();
 $contacts = $stmt2->fetchAll();
 $stmt2->closeCursor();
-print_r($contacts);
+//print_r($contacts);
 ?>
 
 <!DOCTYPE html>
