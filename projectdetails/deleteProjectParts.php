@@ -4,17 +4,17 @@ $pdo = new PDO('mysql:host=localhost;dbname=bronco', 'root', '');
 
 $projectid = filter_input(INPUT_POST, "projectid");
 $partid = filter_input(INPUT_POST, "partid");
-$q = filter_input(INPUT_POST, "pquantity");
+$pquantity = filter_input(INPUT_POST, "pquantity");
 
 $sql = 'SELECT quantity FROM parts 
 WHERE partid =:partid';
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':partid', $partid);
 $stmt->execute();
-$count = $stmt->fetchColumn();
+$count = $stmt->fetch();
 $stmt->closeCursor();
 
-$q=$q+$count;
+$q = $pquantity + $count['quantity'];
 
 $sql2 = 'UPDATE parts
         SET quantity =:q WHERE partid =:partid';
