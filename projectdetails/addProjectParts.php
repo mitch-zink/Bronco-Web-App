@@ -15,7 +15,7 @@ $stmt->execute();
 $count = $stmt->fetch();
 $stmt->closeCursor();
 
-var_dump($count['quantity']);
+//var_dump($count['quantity']);
 $q = 0;
 
 $q = $count['quantity'] - $pquantity;

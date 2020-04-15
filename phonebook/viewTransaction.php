@@ -27,10 +27,10 @@ $stmt->closeCursor();
    <?php
 include("../navbar.php")
 ?>
-      <div class="form-style-6">
+      <div class="form-style-6" style="max-width:50%">
           <h1>View Transactions</h1>
-            <table>
-		        <tr align="center">
+            <table  align="center">
+		        <tr>
                 <th>Transaction ID</th>
                 <th>Part Name</th>
                 <th>Transaction Type</th>

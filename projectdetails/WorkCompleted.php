@@ -44,7 +44,7 @@ $stmt3->closeCursor();
 <h1>Select a Project</h1>
   <form action="#" name="DDL" method="post">
     <select name="projid">
-        <option></option>
+        <option value="" disabled selected>Please Select a Project</option>
         <?php foreach($projects as $project){ ?>
         <option value="<?php echo $project['projectid']; ?>"><?php echo $project['projectname']; ?></option>
         <?php } ?>
@@ -55,9 +55,9 @@ $stmt3->closeCursor();
 
 <?php }else{ ?>
 
-<div class="form-style-6">
+<div class="form-style-6" style="max-width:30%">
   <h1><?php echo $projName['projectname']; ?></h1>
-  <table>
+  <table align="center">
     <tr>
       <th>Work Completed</th>
       <th>Date Completed</th>
@@ -79,7 +79,9 @@ $stmt3->closeCursor();
     </tr>
   <?php } ?>
   </table>
-<form action="addworkform.php" method="post">
+  
+  <div class="form-style-6">
+  <form action="addworkform.php" method="post">
   <input type="submit" value="Add Work Completed">
   <input type="hidden" name="projid" value="<?php echo $projid; ?>">
 </form>

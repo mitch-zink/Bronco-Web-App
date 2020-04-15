@@ -61,11 +61,10 @@ include("../navbar.php")
       </div>
       <br><br>
    <?php if(isset($projectid)) { ?>   
-      <div class="form-style-6">
+      <div class="form-style-6" style="max-width:30%">
           <h1>View Parts for <?php echo $projname[0]; ?></h1>
-            
-            <table>
-		        <tr align="center">
+          <table align="center">
+             <tr>
                 <th>Part Name</th>
                 <th>Item Description</th>
                 <th>Part Family</th>
