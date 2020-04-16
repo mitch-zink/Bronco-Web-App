@@ -23,10 +23,10 @@ $stmt->closeCursor();
    </head>
    <body>
    <?php include("../navbar.php"); ?>
-      <div class="form-style-6">
+      <div class="form-style-6" style="max-width:70%">
           <h1>View Phonebook Contact</h1>
-            <table>
-		        <tr align="center">
+            <table align="center">
+		        <tr>
                 <th>Phone ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -57,6 +57,7 @@ $stmt->closeCursor();
                     </tr> 
                     <?php } ?>   
                     </table> 
+                    <div class="form-style-6">
                     <input type="button" onclick="location.href='../phonebook/phonebook.php';" value="View Phonebook"/>    
 
  

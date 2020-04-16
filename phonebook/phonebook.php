@@ -19,7 +19,7 @@ $stmt->closeCursor();
    </head>
    <body>
    <?php include("../navbar.php"); ?>
-      <div class="form-style-6" style="max-width:95%">
+      <div class="form-style-6" style="max-width:80%">
           <h1>View Contacts</h1>
             <table align="center">
 		        <tr>
@@ -62,6 +62,7 @@ $stmt->closeCursor();
                     </tr> 
                     <?php } ?>   
                     </table> 
+                    <div class="form-style-6">
                     <input type="button" onclick="location.href='addContactform.php';" value="Add New Contact"/>
  
       </div>

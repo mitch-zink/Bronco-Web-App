@@ -27,7 +27,7 @@ $stmt->closeCursor();
    <?php
 include("../navbar.php")
 ?>
-      <div class="form-style-6" style="max-width:50%">
+      <div class="form-style-6" style="max-width:70%">
           <h1>View Transactions</h1>
             <table  align="center">
 		        <tr>
@@ -61,6 +61,7 @@ include("../navbar.php")
                    </tr><?php } ?>
                     
                     </table> 
+                    <div class="form-style-6">
                     <input type="button" onclick="location.href='addTransactionForm.php';" value="Add New Transaction"/>     
       </div>
       

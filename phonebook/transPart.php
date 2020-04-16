@@ -23,9 +23,9 @@ $stmt->closeCursor();
    </head>
    <body>
    <?php include("../navbar.php"); ?>
-      <div class="form-style-6">
+      <div class="form-style-6" style="max-width:50%">
       <h1>View Part</h1>
-            <table>
+            <table align="center">
 		        <tr>
                 <th>Part ID</th>
                 <th>Part Name</th>
@@ -47,6 +47,7 @@ $stmt->closeCursor();
                     </tr>
                 <?php }  ?>
             </table>
+            <div class="form-style-6">
             <input type="button" onclick="location.href='../parts/parts.php';" value="View Parts Inventory"/>
 
 	      </div>

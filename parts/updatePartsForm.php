@@ -50,7 +50,7 @@ include("../navbar.php")
             <input type="text" name="quantity" value="<?php echo $part['quantity']; ?>" />
             <input type="text" name="comments" value="<?php echo $part['comments']; ?>" />
             <input type="hidden" name="partid" value="<?php echo $partid; ?>">
-            <input type="submit" value="Update Transaction" />
+            <input type="submit" value="Submit Changes" />
          </form>
          
       </div>

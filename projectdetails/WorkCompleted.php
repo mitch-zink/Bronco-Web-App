@@ -55,7 +55,7 @@ $stmt3->closeCursor();
 
 <?php }else{ ?>
 
-<div class="form-style-6" style="max-width:30%">
+<div class="form-style-6" style="max-width:50%">
   <h1><?php echo $projName['projectname']; ?></h1>
   <table align="center">
     <tr>

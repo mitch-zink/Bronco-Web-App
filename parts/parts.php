@@ -46,7 +46,7 @@ $stmt1->closeCursor();
    </div>
    <br><br>
    <?php if(isset($partfamily)) { ?>   
-      <div class="form-style-6" style="max-width:80%">
+      <div class="form-style-6" style="max-width:60%">
           <h1>View Parts</h1>
             <table align="center">
 		        <tr>
