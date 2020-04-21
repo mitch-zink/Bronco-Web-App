@@ -29,7 +29,7 @@ $stmt->closeCursor();
 <?php
 include("../navbar.php")
 ?>
-      <h1>Modify Parts</h1>
+      
       <div class="form-style-6">
       
         <h1>Modify Part: <?php echo $part['itemname']; ?></h1>

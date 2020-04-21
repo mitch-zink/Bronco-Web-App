@@ -9,7 +9,6 @@
   </head>
   <body>
    <?php include("../navbar.php"); ?>
-    <h1>Add Completed Work</h1>
     <div class="form-style-6">
       <h1>Enter Work Information</h1>
         <form action="addwork.php" method="post">

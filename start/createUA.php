@@ -42,9 +42,6 @@ include("../navbar.php")
 <h1>Create New User Account</h1>
 <form action="createua.php" method="post">
     <p>
-       <input type="text" name="userid"placeholder="userid" id="userid" readonly>
-    </p>
-    <p>
         <input type="text"placeholder="username" name="username" id="username" pattern="[a-zA-Z0-9- ']{3,}" title="Only letters & numbers allowed characters">
     </p>
     <p>
