@@ -19,7 +19,7 @@ $stmt->closeCursor();
    </head>
    <body>
    <?php include("../navbar.php"); ?>
-      <div class="form-style-6" style="max-width:80%">
+      <div class="form-style-6" style="max-width:85%">
           <h1>View Contacts</h1>
             <table align="center">
 		        <tr>
