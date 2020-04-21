@@ -11,7 +11,7 @@ $stmt->bindValue(":phoneid", $phoneid);
 $stmt->execute();
 $contact = $stmt->fetch();
 $stmt->closeCursor();
-print_r($contact['firstname']);
+//print_r($contact['firstname']);
 ?>
 
 <!DOCTYPE html>

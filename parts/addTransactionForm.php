@@ -33,7 +33,7 @@ $stmt2->closeCursor();
    <?php
    include("../navbar.php")
    ?>
-       <h1>Add Transaction</h1>
+       
       <div class="form-style-6">
       <?php if(!isset($lastid)){ ?>
             <h1>Please Select a Part</h1>
